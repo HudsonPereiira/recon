@@ -382,3 +382,8 @@ select#municipios3 {
         /* Espaçamento inferior dos botões */
     }
 }
+
+
+body {
+padding: 10%
+}
