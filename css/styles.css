@@ -390,17 +390,19 @@ body {
 
 
 
-
-
-
-
-
 /* CSS do textarea */
-table td textarea {
+/* Estilo para textarea */
+textarea {
     width: 91.5%;
-    box-sizing: border-box; /* Inclui padding e border na largura total */
-    resize: vertical; /* Permite redimensionamento vertical */
+    box-sizing: border-box;
+    min-height: 50px;
+    /* Altura mínima */
 }
 
-
-
+/* Estilo para input */
+input[type="text"] {
+    width: 91.5%;
+    box-sizing: border-box;
+    text-align: center;
+    /* Centraliza o texto */
+}

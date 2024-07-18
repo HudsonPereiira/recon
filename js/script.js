@@ -1068,6 +1068,7 @@ body {
 
 
 
+/* CSS do textarea */
 table td textarea {
     width: 91.5%;
     box-sizing: border-box; /* Inclui padding e border na largura total */
@@ -1078,6 +1079,8 @@ table td textarea {
         </style>
     `;
 
+
+    // JS DA PORRA DO PDF
     // Abrindo uma nova janela
     const win = window.open('', '', 'height=700, width=700');
     win.document.write('<html><head><title>Recon</title>');
@@ -1110,19 +1113,41 @@ table td textarea {
     win.print();
 });
 
-const textarea = document.getElementById('obstaculos');
 
-        // Função para ajustar a altura do textarea
-        function ajustarAltura() {
-            textarea.style.height = 'auto'; // Reseta a altura
-            textarea.style.height = textarea.scrollHeight + 'px'; // Define a altura com base no conteúdo
-        }
 
-        // Ajusta a altura quando o conteúdo muda
-        textarea.addEventListener('input', ajustarAltura);
 
-        // Ajusta a altura inicial
-        ajustarAltura();
+
+// Função para ajustar a altura do textarea
+function ajustarAltura(textarea) {
+    textarea.style.height = 'auto'; // Reseta a altura
+    textarea.style.height = textarea.scrollHeight + 'px'; // Define a altura com base no conteúdo
+}
+
+// Função para aplicar o ajuste de altura a um textarea
+function aplicarAjusteAltura(textarea) {
+    textarea.addEventListener('input', () => ajustarAltura(textarea));
+    ajustarAltura(textarea); // Ajusta a altura inicial
+}
+
+// Função para aplicar o ajuste de altura a todos os textareas na página
+function aplicarAjusteAlturaATodos() {
+    const textareas = document.querySelectorAll('textarea');
+    textareas.forEach(textarea => aplicarAjusteAltura(textarea));
+}
+
+// Chama a função para ajustar os textareas existentes
+aplicarAjusteAlturaATodos();
+
+// Observa alterações no DOM e aplica ajuste de altura a novos textareas
+const observer = new MutationObserver(() => {
+    aplicarAjusteAlturaATodos();
+});
+
+// Configura o observer para observar mudanças no DOM
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
 
 
 
