@@ -276,116 +276,8 @@ select#municipios3 {
 
 
 
-/* Media Query para dispositivos móveis */
-@media only screen and (max-width: 600px) {
-
-    /* Ajustes específicos para dispositivos móveis */
-    .header-content {
-        flex-direction: column;
-        /* Altera a direção para coluna */
-        align-items: center;
-        /* Centraliza verticalmente */
-        text-align: center;
-        /* Centraliza o texto */
-    }
-
-    .brasao {
-        margin-bottom: 10px;
-        /* Espaçamento inferior do brasão */
-    }
-
-    .header-text p {
-        font-size: 14px;
-        /* Tamanho da fonte reduzido */
-    }
-
-    table {
-        font-size: 12px;
-        /* Reduz o tamanho da fonte da tabela */
-    }
-
-    th,
-    td {
-        padding: 5px;
-        /* Reduz o espaçamento interno das células */
-    }
-
-    .image-preview {
-        width: 100%;
-        /* Largura total para imagens */
-        height: auto;
-        /* Altura automática */
-    }
-
-    input[type="text"],
-    select {
-        width: 100%;
-        /* Largura total para inputs e selects */
-    }
-
-    .button-send-photo,
-    .button-select-file {
-        margin-bottom: 10px;
-        /* Espaçamento inferior dos botões */
-    }
-}
-
-@media only screen and (max-width: 600px) {
-
-    /* Ajustes específicos para dispositivos móveis */
-    .header-content {
-        flex-direction: column;
-        /* Altera a direção para coluna */
-        align-items: center;
-        /* Centraliza verticalmente */
-        text-align: center;
-        /* Centraliza o texto */
-    }
-
-    .brasao {
-        margin-bottom: 10px;
-        /* Espaçamento inferior do brasão */
-    }
-
-    .header-text p {
-        font-size: 14px;
-        /* Tamanho da fonte reduzido */
-    }
-
-    table {
-        font-size: 12px;
-        /* Reduz o tamanho da fonte da tabela */
-    }
-
-    th,
-    td {
-        padding: 5px;
-        /* Reduz o espaçamento interno das células */
-    }
-
-    .image-preview {
-        width: 100%;
-        /* Largura total para imagens */
-        height: auto;
-        /* Altura automática */
-    }
-
-    input[type="text"],
-    select {
-        width: 100%;
-        /* Largura total para inputs e selects */
-    }
-
-    .button-send-photo,
-    .button-select-file {
-        margin-bottom: 10px;
-        /* Espaçamento inferior dos botões */
-    }
-}
-
-
 body {
-    padding: 5%
+    padding: 10%
 }
 
 
@@ -405,4 +297,59 @@ input[type="text"] {
     box-sizing: border-box;
     text-align: center;
     /* Centraliza o texto */
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    /* Ajustes específicos para dispositivos móveis */
+    .header-content {
+        flex-direction: column;
+        /* Altera a direção para coluna */
+        align-items: center;
+        /* Centraliza verticalmente */
+        text-align: center;
+        /* Centraliza o texto */
+    }
+
+    .brasao {
+        margin-bottom: 10px;
+        /* Espaçamento inferior do brasão */
+    }
+
+    .header-text p {
+        font-size: 14px;
+        /* Tamanho da fonte reduzido */
+    }
+
+    table {
+        font-size: 12px;
+        /* Reduz o tamanho da fonte da tabela */
+    }
+
+    th,
+    td {
+        padding: 5px;
+        /* Reduz o espaçamento interno das células */
+    }
+
+    .image-preview {
+        width: 100%;
+        /* Largura total para imagens */
+        height: auto;
+        /* Altura automática */
+    }
+
+    input[type="text"],
+    select {
+        width: 100%;
+        /* Largura total para inputs e selects */
+    }
+
+    .button-send-photo,
+    .button-select-file {
+        margin-bottom: 10px;
+        /* Espaçamento inferior dos botões */
+    }
 }
