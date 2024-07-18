@@ -1,0 +1,353 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    /* Define a fonte padrão para o corpo */
+    margin: 0;
+    /* Remove margens padrão */
+    padding: 0;
+    /* Remove preenchimento padrão */
+    color: #000;
+    /* Define a cor do texto como preto */
+    display: flex;
+    /* Usa display flex para organização */
+    flex-direction: column;
+    /* Organiza os itens em coluna */
+    align-items: center;
+    /* Centraliza os itens horizontalmente */
+    background-color: #f0f0f0;
+    /* Cor de fundo para todo o corpo */
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #002c7d;
+    /* Cor de fundo do cabeçalho */
+    color: #ffffff;
+    /* Cor do texto no cabeçalho */
+    padding: 20px 0;
+    /* Espaçamento interno do cabeçalho (20px acima e abaixo, 0 nos lados) */
+    text-align: center;
+    /* Alinha o texto ao centro */
+    width: 100%;
+    /* Largura total do cabeçalho */
+    box-sizing: border-box;
+    /* Inclui padding e borda na largura total */
+    margin: 0;
+    /* Remove margem padrão */
+}
+
+/* Conteúdo dentro do cabeçalho */
+.header-content {
+    max-width: 800px;
+    /* Largura máxima do conteúdo do cabeçalho */
+    width: 100%;
+    /* Largura total do conteúdo do cabeçalho */
+    margin: 0 auto;
+    /* Centraliza o conteúdo horizontalmente */
+    display: flex;
+    /* Usa display flex para organização */
+    align-items: center;
+    /* Centraliza os itens verticalmente */
+    justify-content: center;
+    /* Centraliza os itens horizontalmente */
+}
+
+/* Estilo para o brasão */
+.brasao {
+    width: 80px;
+    /* Largura do brasão */
+    height: auto;
+    /* Altura automática do brasão */
+    margin-right: 10px;
+    /* Espaçamento à direita do brasão */
+}
+
+/* Estilização dos textos dentro do cabeçalho */
+.header-text {
+    text-align: center;
+    /* Alinha o texto à esquerda */
+}
+
+.header-text p {
+    font-size: 16px;
+    /* Tamanho da fonte para parágrafos */
+    margin: 5px 0;
+    /* Espaçamento em torno dos parágrafos */
+    text-transform: uppercase;
+    /* Transforma o texto em maiúsculo */
+}
+
+/* Estilos da tabela */
+table {
+    width: 100%;
+    /* Largura total da tabela */
+    border-collapse: collapse;
+    /* Remove espaçamento entre as células */
+    margin-bottom: 20px;
+    /* Espaçamento inferior da tabela */
+    border: 2px solid #002c7d;
+    /* Borda da tabela */
+}
+
+/* Estilizando células de cabeçalho e dados */
+th,
+td {
+    border: 1px solid #002c7d;
+    /* Borda das células */
+    padding: 8px;
+    /* Espaçamento interno das células */
+    text-align: center;
+    /* Alinha o texto ao centro */
+}
+
+/* Estilizando células de cabeçalho */
+th {
+    background-color: #f2f2f2;
+    /* Cor de fundo das células de cabeçalho */
+    color: #002c7d;
+    /* Cor do texto nas células de cabeçalho */
+    font-weight: bold;
+    /* Texto em negrito */
+    text-transform: uppercase;
+    /* Transforma o texto em maiúsculo */
+}
+
+/* Estilos das fotos carregadas */
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+}
+
+.image-preview {
+    width: 7cm;
+    height: 5cm;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    position: center;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Estilização da área de segurança da aeronave */
+.area_segura {
+    max-width: 100%;
+    /* Largura máxima da área de segurança */
+    width: 100%;
+    /* Largura total da área de segurança */
+    height: auto;
+    /* Altura automática da área de segurança */
+}
+
+/* Centralizar placeholder nos inputs */
+input[type="text"]::placeholder {
+    text-align: center;
+    /* Centraliza o texto do placeholder */
+}
+
+/* Ajuste de largura para todos os inputs fora das tabelas e alinhamento à esquerda */
+input[type="text"] {
+    width: 100%;
+    /* Largura total para todos os inputs */
+    max-width: calc(100% - 40px);
+    /* Largura máxima calculada para manter o conteúdo dentro da margem */
+    box-sizing: border-box;
+    /* Inclui padding e borda na largura total */
+    text-align: left;
+    /* Alinha o texto à esquerda */
+}
+
+
+/* Centralizar texto dentro dos inputs nas tabelas */
+table input[type="text"] {
+    text-align: center;
+    /* Centraliza o texto nos inputs */
+}
+
+/* Estilizando os botões */
+button {
+    padding: 10px 20px;
+    /* Espaçamento interno do botão */
+    border: none;
+    /* Remove a borda do botão */
+    cursor: pointer;
+    /* Define o cursor como ponteiro */
+    border-radius: 5px;
+    /* Borda arredondada */
+    font-size: 16px;
+    /* Tamanho da fonte do botão */
+    margin-right: 10px;
+    /* Espaçamento à direita do botão */
+    text-align: center;
+    /* Centraliza o texto dentro do botão */
+}
+
+/* Botões de adição (azuis) */
+.add-btn {
+    background-color: #0578f3;
+    /* Cor de fundo do botão de adição */
+    color: #fff;
+    /* Cor do texto no botão de adição */
+}
+
+/* Botões de remoção (vermelhos) */
+.remove-btn {
+    background-color: #dc3545;
+    /* Cor de fundo do botão de remoção */
+    color: #fff;
+    /* Cor do texto no botão de remoção */
+}
+
+/* Botão de selecionar arquivos (branco) */
+.button-select-file {
+    background-color: #fff;
+    /* Cor de fundo do botão de seleção de arquivo */
+    color: #000;
+    /* Cor do texto no botão de seleção de arquivo */
+}
+
+/* Botão de enviar fotos (verde) */
+.button-send-photo {
+    background-color: #28a745;
+    /* Cor de fundo do botão de enviar foto */
+    color: #fff;
+    /* Cor do texto no botão de enviar foto */
+}
+
+/* Estilizando o select */
+select {
+    font-family: Arial, sans-serif;
+    /* Define a fonte para o select */
+    font-size: 16px;
+    /* Tamanho da fonte do select */
+    color: #000;
+    /* Cor do texto no select */
+    max-width: calc(100% - 40px);
+    /* Largura máxima calculada para manter o conteúdo dentro da margem */
+    box-sizing: border-box;
+    /* Inclui padding e borda na largura total */
+    padding: 5px;
+    /* Espaçamento interno do select */
+    margin-bottom: 10px;
+    /* Espaçamento inferior do select */
+    font-weight: bold;
+    /* Texto em negrito no select */
+}
+
+
+footer {
+    text-align: center;
+    /* Centraliza o conteúdo do footer */
+}
+
+/* Estilizando o select */
+select#municipios3 {
+    font-family: Arial, sans-serif;
+    /* Mesma fonte dos cabeçalhos das tabelas */
+    font-size: 16px;
+    /* Mesmo tamanho de fonte dos cabeçalhos das tabelas */
+    color: #002c7d;
+    /* Mesma cor dos cabeçalhos das tabelas */
+    max-width: calc(100% - 40px);
+    /* Largura máxima calculada para manter o conteúdo dentro da margem */
+    box-sizing: border-box;
+    /* Inclui padding e borda na largura total */
+    padding: 5px;
+    /* Espaçamento interno do select */
+    margin-bottom: 10px;
+    /* Espaçamento inferior do select */
+    font-weight: bold;
+    /* Texto em negrito */
+    text-align: center;
+    /* Alinha o texto ao centro */
+    text-transform: uppercase;
+    /* Transforma o texto em maiúsculo */
+}
+
+body {
+    padding: 5%
+}
+
+
+
+/* CSS do textarea */
+/* Estilo para textarea */
+textarea {
+    width: 91.5%;
+    box-sizing: border-box;
+    min-height: 50px;
+    /* Altura mínima */
+}
+
+/* Estilo para input */
+input[type="text"] {
+    width: 91.5%;
+    box-sizing: border-box;
+    text-align: center;
+    /* Centraliza o texto */
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    /* Ajustes específicos para dispositivos móveis */
+    .header-content {
+        flex-direction: column;
+        /* Altera a direção para coluna */
+        align-items: center;
+        /* Centraliza verticalmente */
+        text-align: center;
+        /* Centraliza o texto */
+    }
+
+    .brasao {
+        margin-bottom: 10px;
+        /* Espaçamento inferior do brasão */
+    }
+
+    .header-text p {
+        font-size: 14px;
+        /* Tamanho da fonte reduzido */
+    }
+
+    table {
+        font-size: 12px;
+        /* Reduz o tamanho da fonte da tabela */
+    }
+
+    th,
+    td {
+        padding: 5px;
+        /* Reduz o espaçamento interno das células */
+    }
+
+    .image-preview {
+        width: 100%;
+        /* Largura total para imagens */
+        height: auto;
+        /* Altura automática */
+    }
+
+    input[type="text"],
+    select {
+        width: 100%;
+        /* Largura total para inputs e selects */
+    }
+
+    .button-send-photo,
+    .button-select-file {
+        margin-bottom: 10px;
+        /* Espaçamento inferior dos botões */
+    }
+}
