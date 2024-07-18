@@ -385,5 +385,22 @@ select#municipios3 {
 
 
 body {
-padding: 5%
+    padding: 5%
 }
+
+
+
+
+
+
+
+
+/* CSS do textarea */
+table td textarea {
+    width: 91.5%;
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    resize: vertical; /* Permite redimensionamento vertical */
+}
+
+
+
