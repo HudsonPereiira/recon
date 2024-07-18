@@ -800,8 +800,8 @@ th {
 }
 
 .image-preview {
-    width: 7cm;
-    height: 5cm;
+    width: 5cm;
+    height: 3cm;
     border: 1px solid #ccc;
     overflow: hidden;
     position: center;
@@ -1066,8 +1066,6 @@ body {
 }
     
 
-
-
 /* CSS do textarea */
 table td textarea {
     width: 91.5%;
@@ -1075,7 +1073,22 @@ table td textarea {
     resize: vertical; /* Permite redimensionamento vertical */
 }
 
-
+/*CSS PARA COLOCAR MARGEM NA IMPRESSÃO */
+@page {
+                size: A4;
+                margin: 20mm 10mm; /* Margem superior e inferior de 20mm, e laterais de 10mm */
+            }
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            .area_segura {
+                max-width: 100%;
+                width: 100%;
+                height: auto;
+                margin: 0 auto; /* Centraliza horizontalmente */
+            }
         </style>
     `;
 
@@ -1148,14 +1161,3 @@ observer.observe(document.body, {
     childList: true,
     subtree: true
 });
-
-
-
-
-
-
-
-
-
-
-
