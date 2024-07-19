@@ -17,28 +17,16 @@
                     <p><strong>GOVERNO DO ESTADO DO ESPÍRITO SANTO<br>
                             SECRETARIA DA CASA MILITAR<br>
                             NÚCLEO DE OPERAÇÕES ESPECIAIS</strong></p>
-                    <p>RECON Nº: <input type="text" maxlength="10" style="max-width: 100px; text-align: center;"></p>
+                    <h4>RECON Nº: <input type="text" id="recon" placeholder="000/2024"></h4>
                 </div>
             </div>
         </header>
 
         <main>
-            <strong>
-                <p>INFORMATIVO DE VIAGEM AO MUNICÍPIO DE <select id="municipios">
-                        <option value="">Carregando municípios...</option>
-                    </select><br>
-                </p>
-            </strong>
-
-            <strong>
-                <p><input type="text" placeholder="Informativo da agenda" style="text-align: center;"></p>
-            </strong>
-
-            <strong>
-                <p>AGENDA ANTERIOR NO MUNICÍPIO.<BR>
-                    <input type="text" placeholder="Resumo da agenda" style="text-align: center;">
-                </p>
-            </strong><br>
+            <h4>INFORMATIVO DE VIAGEM AO MUNICÍPIO DE <input type="text" id="municipio" placeholder="PONTO BELO"><br></h4>       
+            <th><input type="text" placeholder="Informativo da agenda" id="entrada-texto"></th>
+            <h4>AGENDA ANTERIOR NO MUNICÍPIO<BR>
+            <input type="text" placeholder="Resumo da agenda" id="entrada-texto"></h4><br>
 
 
 
@@ -285,7 +273,7 @@
                 <div class="pouso-section" data-section-number="11">
                     <!-- TABELA DOS DADOS DO LOCAL DO POUSO -->
                     <strong>
-                        <p>DADOS DO LOCAL DO POUSO 1 <td><input type="text" placeholder="Informe o local do pouso">
+                        <p>DADOS DO LOCAL DO POUSO 1 <td><input type="text" placeholder="Informe o local do pouso" id="entrada-texto">
                             </td>
                         </p>
                     </strong>
@@ -299,7 +287,7 @@
                         <tbody>
                             <tr>
                                 <td>Local de Pouso:</td>
-                                <td><input type="text" placeholder="Informe o local de pouso"></td>
+                                <td><input type="text" placeholder="Informe o local de pouso" id="entrada-texto"></td>
                             </tr>
                             <tr>
                                 <td>Tipo de Piso:</td>
@@ -331,25 +319,21 @@
 
                     <!-- DADOS DO LOCAL DE POUSO -->
                     <strong>
-                        <p>COORDENADAS DO LOCAL DE POUSO 1 <td><input type="text"
+                        <p>COORDENADAS DO LOCAL DE POUSO 1 <td><input type="text" id="entrada-texto"
                                     placeholder="Informe o local do pouso"></td>
                         </p>
                     </strong>
                     <table border="1">
                         <tbody>
                             <tr class="red-text">
-                                <td style="width: 10%;"><input type="text" style="width: 100%;"
-                                        placeholder="Digite aqui..."></td>
-                                <td style="width: 40%;"><input type="text" style="width: 100%;"
-                                        placeholder="Informe a latitude"></td>
-                                <td style="width: 10%;"><input type="text" style="width: 100%;"
-                                        placeholder="Digite aqui..."></td>
-                                <td style="width: 40%;"><input type="text" style="width: 100%;"
-                                        placeholder="Informe a longitude"></td>
+                                <td><input type="text" placeholder="" id="coordenada"></td>
+                                <td><input type="text" placeholder="Informe a latitude" id="coordenada2"></td>
+                                <td><input type="text" placeholder="" id="coordenada"></td>
+                                <td><input type="text" placeholder="Informe a longitude" id="coordenada2"></td>
                             </tr>
                             <tr>
-                                <td colspan="4">
-                                    <input type="url" id="link" name="link" placeholder="Link da coordnada">
+                                <td colspan="4">          
+                                     <input type="url" id="link" name="link" placeholder="Link da coordnada">
                                 </td>
                             </tr>
                         </tbody>
@@ -394,16 +378,9 @@
             <img src="assets/images/area_segura_pouso.png" alt="Área de segurança do helicópetero"
                 class="area_segura"><br>
 
-            <br><br><strong>
-                <p>INFORMAÇÕES DA POLÍTICA DO MUNICÍPIO DE <select id="municipios2">
-                        <option value="">Carregando municípios...</option>
-                </p>
-                </select><br>
-            </strong>
-            <strong>
-                <input type="text"
-                    placeholder="Ex: O Prefeito Fulano de Tal (Partido) foi eleito no último pleito, com 55,97% dos votos, total de 9.668 dos votos válidos">
-            </strong><br>
+            <br><br><h4>INFORMAÇÕES DA POLÍTICA DO MUNICÍPIO DE <input type="text" id="municipio"></h4><br>
+                <input type="text" id="entrada-texto"
+                    placeholder="Ex: O Prefeito Fulano de Tal (Partido) foi eleito no último pleito, com 55,97% dos votos, total de 9.668 dos votos válidos"><br>
 
             <!-- TABELA COM AS EUIPES DE SERVIÇO-->
             <br><br> <strong>
@@ -414,7 +391,7 @@
                     <tr>
                         <th>Vitória</th>
                         <th>Celular</th>
-                        <th><select id="municipios3"></th>
+                        <th><input type="text" placeholder="Município da agenda" , id="municipio-viagem"></th>
                         <th>Celular</th>
                     </tr>
                 </thead>
@@ -492,10 +469,7 @@
             </table><br>
 
             <!--Input para observações-->
-            <strong>
-                <p>OBSERVAÇÔES:<input type="text" placeholder="Descrever as observações."></p>
-            </strong><br>
-            <br>
+                <h4>Observações<textarea id="observacoes" placeholder="Informe as observações"></textarea></h4><br>
             <strong>
                 <p>DEVOLUÇÃO DOS VEÍCULOS: CONSULTAR O NÚCLEO DE OPERAÇÕES ESPECIAIS - NOE.</p>
             </strong><BR>

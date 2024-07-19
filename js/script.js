@@ -1,55 +1,3 @@
-//JS DO SELECT COM OS MUNICÍPIOS DO ES
-// Lista de todos os 78 municípios do Espírito Santo
-// Lista de todos os 78 municípios do Espírito Santo
-const municipiosES = [
-    "Afonso Cláudio", "Água Doce do Norte", "Águia Branca", "Alegre", "Alfredo Chaves", "Alto Rio Novo", "Anchieta", "Apiacá", "Aracruz",
-    "Atilio Vivacqua", "Baixo Guandu", "Barra de São Francisco", "Boa Esperança", "Bom Jesus do Norte", "Brejetuba", "Cachoeiro de Itapemirim",
-    "Cariacica", "Castelo", "Colatina", "Conceição da Barra", "Conceição do Castelo", "Divino de São Lourenço", "Domingos Martins", "Dores do Rio Preto",
-    "Ecoporanga", "Fundão", "Governador Lindenberg", "Guaçuí", "Guarapari", "Ibatiba", "Ibiraçu", "Ibitirama", "Iconha", "Irupi", "Itaguaçu",
-    "Itapemirim", "Itarana", "Iúna", "Jaguaré", "Jerônimo Monteiro", "João Neiva", "Laranja da Terra", "Linhares", "Mantenópolis", "Marataízes",
-    "Marechal Floriano", "Marilândia", "Mimoso do Sul", "Montanha", "Mucurici", "Muniz Freire", "Muqui", "Nova Venécia", "Pancas", "Pedro Canário",
-    "Pinheiros", "Piúma", "Ponto Belo", "Presidente Kennedy", "Rio Bananal", "Rio Novo do Sul", "Santa Leopoldina", "Santa Maria de Jetibá",
-    "Santa Teresa", "São Domingos do Norte", "São Gabriel da Palha", "São José do Calçado", "São Mateus", "São Roque do Canaã", "Serra",
-    "Sooretama", "Vargem Alta", "Venda Nova do Imigrante", "Viana", "Vila Pavão", "Vila Valério", "Vila Velha", "Vitória"
-];
-
-// Função para popular o select com os municípios
-
-function popularMunicipios() {
-    // Selects que serão populados
-    const selects = [document.getElementById('municipios'), document.getElementById('municipios2'), document.getElementById('municipios3')];
-    selects.forEach(selectMunicipios => {
-
-        // Limpa as opções atuais
-        selectMunicipios.innerHTML = '';
-
-        // Adiciona a primeira opção padrão
-        const optionPadrao = document.createElement('option');
-        optionPadrao.value = '';
-        optionPadrao.textContent = 'Selecione um município';
-        selectMunicipios.appendChild(optionPadrao);
-
-        // Adiciona as opções dos municípios
-        municipiosES.forEach(municipio => {
-            const option = document.createElement('option');
-            option.value = municipio;
-            option.textContent = municipio;
-            selectMunicipios.appendChild(option);
-        });
-    });
-}
-
-// Chama a função para popular os selects ao carregar a página
-document.addEventListener('DOMContentLoaded', popularMunicipios);
-
-// Chama a função para popular os municípios ao carregar a página
-document.addEventListener('DOMContentLoaded', popularMunicipios);
-
-
-
-
-
-
 // JS DOS CONTATOS TELEFÔNICOS
 document.addEventListener('DOMContentLoaded', function () {
     // Função para adicionar uma linha na tabela de contatos
@@ -512,20 +460,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>COORDENADAS DO LOCAL DE POUSO ${number}: <input type="text" placeholder="Informe o local do pouso"></p>
             </strong>
             <table border="1">
-                <tbody>
-                    <tr class="red-text">
-                        <td style="width: 10%;"><input type="text" style="width: 100%;" placeholder="Digite aqui..."></td>
-                        <td style="width: 40%;"><input type="text" style="width: 100%;" placeholder="Informe a latitude"></td>
-                        <td style="width: 10%;"><input type="text" style="width: 100%;" placeholder="Digite aqui..."></td>
-                        <td style="width: 40%;"><input type="text" style="width: 100%;" placeholder="Informe a longitude"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="4">
-                            <input type="text" style="width: 100%;" placeholder="Informe o link da coordenada">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        <tbody>
+                            <tr class="red-text">
+                                <td><input type="text" placeholder="" id="coordenada"></td>
+                                <td><input type="text" placeholder="Informe a latitude" id="coordenada2"></td>
+                                <td><input type="text" placeholder="" id="coordenada"></td>
+                                <td><input type="text" placeholder="Informe a longitude" id="coordenada2"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">          
+                                     <input type="url" id="link" name="link" placeholder="Link da coordnada">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
         
             <strong>
                 <p>FOTOGRAFIAS DO LOCAL DO POUSO ${number}:</p>
@@ -640,7 +588,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-//JS DA PORRA DO PDF
+
+
+// JS da porra do PDF
 const downloadPdf = document.getElementById("downloadpdf");
 
 downloadPdf.addEventListener("click", (evt) => {
@@ -648,463 +598,245 @@ downloadPdf.addEventListener("click", (evt) => {
 
     // Estilos CSS para o documento PDF
     const estilo = `
-        <style>
-            /* Estilos gerais */
-body body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                color: #000;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                background-color: #f0f0f0;
-            }
-
-            /* Removendo cabeçalho padrão do PDF */
-            @page {
-                size: auto;
-                margin: 0mm;
-            }
-
-            /* Estilizando os botões */
-            .button-text-hidden {
-                font-size: 0;
-                /* Oculta o texto dos botões */
-                color: transparent;
-                /* Oculta o texto dos botões */
-                width: 0;
-                /* Oculta o texto dos botões */
-            }
- {
-    font-family: Arial, sans-serif;
-    /* Define a fonte padrão para o corpo */
-    margin: 0;
-    /* Remove margens padrão */
-    padding: 0;
-    /* Remove preenchimento padrão */
-    color: #000;
-    /* Define a cor do texto como preto */
-    display: flex;
-    /* Usa display flex para organização */
-    flex-direction: column;
-    /* Organiza os itens em coluna */
-    align-items: center;
-    /* Centraliza os itens horizontalmente */
-    background-color: #f0f0f0;
-    /* Cor de fundo para todo o corpo */
+    <style>
+    /* Estilos gerais */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+color: #000;
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: #f0f0f0;
 }
 
 /* Estilos do cabeçalho */
 header {
-    background-color: #002c7d;
-    /* Cor de fundo do cabeçalho */
-    color: #ffffff;
-    /* Cor do texto no cabeçalho */
-    padding: 20px 0;
-    /* Espaçamento interno do cabeçalho (20px acima e abaixo, 0 nos lados) */
-    text-align: center;
-    /* Alinha o texto ao centro */
-    width: 100%;
-    /* Largura total do cabeçalho */
-    box-sizing: border-box;
-    /* Inclui padding e borda na largura total */
-    margin: 0;
-    /* Remove margem padrão */
+background-color: #002c7d;
+color: #ffffff;
+padding: 20px 0;
+text-align: center;
+width: 100%;
+box-sizing: border-box;
 }
 
-/* Conteúdo dentro do cabeçalho */
 .header-content {
-    max-width: 800px;
-    /* Largura máxima do conteúdo do cabeçalho */
-    width: 100%;
-    /* Largura total do conteúdo do cabeçalho */
-    margin: 0 auto;
-    /* Centraliza o conteúdo horizontalmente */
-    display: flex;
-    /* Usa display flex para organização */
-    align-items: center;
-    /* Centraliza os itens verticalmente */
-    justify-content: center;
-    /* Centraliza os itens horizontalmente */
+max-width: 800px;
+width: 100%;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
 }
 
-/* Estilo para o brasão */
 .brasao {
-    width: 80px;
-    /* Largura do brasão */
-    height: auto;
-    /* Altura automática do brasão */
-    margin-right: 10px;
-    /* Espaçamento à direita do brasão */
+width: 80px;
+height: auto;
+margin-right: 10px;
 }
 
-/* Estilização dos textos dentro do cabeçalho */
 .header-text {
-    text-align: center;
-    /* Alinha o texto à esquerda */
+text-align: center;
 }
 
 .header-text p {
-    font-size: 16px;
-    /* Tamanho da fonte para parágrafos */
-    margin: 5px 0;
-    /* Espaçamento em torno dos parágrafos */
-    text-transform: uppercase;
-    /* Transforma o texto em maiúsculo */
+font-size: 16px;
+margin: 5px 0;
+text-transform: uppercase;
 }
 
 /* Estilos da tabela */
 table {
-    width: 100%;
-    /* Largura total da tabela */
-    border-collapse: collapse;
-    /* Remove espaçamento entre as células */
-    margin-bottom: 20px;
-    /* Espaçamento inferior da tabela */
-    border: 2px solid #002c7d;
-    /* Borda da tabela */
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+border: 2px solid #002c7d;
 }
 
-/* Estilizando células de cabeçalho e dados */
-th,
-td {
-    border: 1px solid #002c7d;
-    /* Borda das células */
-    padding: 8px;
-    /* Espaçamento interno das células */
-    text-align: center;
-    /* Alinha o texto ao centro */
+th, td {
+border: 1px solid #002c7d;
+padding: 8px;
+text-align: center;
 }
 
-/* Estilizando células de cabeçalho */
 th {
-    background-color: #f2f2f2;
-    /* Cor de fundo das células de cabeçalho */
-    color: #002c7d;
-    /* Cor do texto nas células de cabeçalho */
-    font-weight: bold;
-    /* Texto em negrito */
-    text-transform: uppercase;
-    /* Transforma o texto em maiúsculo */
+background-color: #f2f2f2;
+color: #002c7d;
+font-weight: bold;
+text-transform: uppercase;
 }
 
-/* Estilos das fotos carregadas */
+/* Estilos dos inputs e textareas */
+input[type="text"], textarea {
+width: 91.5%;
+box-sizing: border-box;
+text-align: center;
+}
+
+input[type="text"]::placeholder {
+text-align: center;
+}
+
+/* Estilos dos botões */
+button {
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+font-size: 16px;
+margin-right: 10px;
+text-align: center;
+}
+
+.add-btn {
+background-color: #0578f3;
+color: #fff;
+}
+
+.remove-btn {
+background-color: #dc3545;
+color: #fff;
+}
+
+.button-select-file {
+background-color: #fff;
+color: #000;
+}
+
+.button-send-photo {
+background-color: #28a745;
+color: #fff;
+}
+
+footer {
+text-align: center;
+}
+
+/* Estilos específicos para inputs */
+
+#municipio-viagem, #municipio, #link, #coordenada, #coordenada2 {
+font-family: Arial, sans-serif;
+border: 1px solid #ccc;
+padding: 5px;
+display: inline-block;
+font-size: 16px;
+font-weight: bold;
+text-align: center;
+}
+
+#municipio {
+width: 20%;
+color: #00040a;
+}
+
+#municipio-viagem {
+width: 100%;
+color: #002c7d;
+}
+
+#link {
+width: 50%;
+color: #0039a4;
+}
+
+#coordenada {
+width: 15%;
+color: #f70019;
+}
+
+#coordenada2 {
+width: 100%;
+color: #f70019;
+}
+
+/* Estilo das fotos carregadas */
 .image-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    width: calc(100% - 40px);
-    box-sizing: border-box;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+margin-top: 20px;
+width: calc(100% - 40px);
+box-sizing: border-box;
 }
 
 .image-preview {
-    width: 5cm;
-    height: 3cm;
-    border: 1px solid #ccc;
-    overflow: hidden;
-    position: center;
-    box-sizing: border-box;
-    margin-bottom: 10px;
+max-width: 5cm;
+max-height: 3cm;
+border: 4px solid #ffffff;
+overflow: hidden;
+margin-bottom: 10px;
 }
 
 .image-preview img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+width: 100%;
+height: 100%;
+object-fit: cover;
 }
-
 
 /* Estilização da área de segurança da aeronave */
 .area_segura {
-    max-width: 100%;
-    /* Largura máxima da área de segurança */
+max-width: 100%;
+width: 100%;
+max-height: 10cm;
+height: 5%;
+justify-content: center; /* Centraliza horizontalmente */
+align-items: center;
+}
+
+
+/* Responsividade */
+@media only screen and (max-width: 600px) {
+.header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.brasao {
+    margin-bottom: 10px;
+}
+
+.header-text p {
+    font-size: 14px;
+}
+
+table {
+    font-size: 12px;
+}
+
+th, td {
+    padding: 5px;
+}
+
+.image-preview {
     width: 100%;
-    /* Largura total da área de segurança */
     height: auto;
-    /* Altura automática da área de segurança */
 }
 
-/* Centralizar placeholder nos inputs */
-input[type="text"]::placeholder {
-    text-align: center;
-    /* Centraliza o texto do placeholder */
-}
-
-/* Ajuste de largura para todos os inputs fora das tabelas e alinhamento à esquerda */
-input[type="text"] {
+input[type="text"], select {
     width: 100%;
-    /* Largura total para todos os inputs */
-    max-width: calc(100% - 40px);
-    /* Largura máxima calculada para manter o conteúdo dentro da margem */
-    box-sizing: border-box;
-    /* Inclui padding e borda na largura total */
-    text-align: left;
-    /* Alinha o texto à esquerda */
 }
 
-
-/* Centralizar texto dentro dos inputs nas tabelas */
-table input[type="text"] {
-    text-align: center;
-    /* Centraliza o texto nos inputs */
-}
-
-/* Estilizando os botões */
-button {
-    padding: 10px 20px;
-    /* Espaçamento interno do botão */
-    border: none;
-    /* Remove a borda do botão */
-    cursor: pointer;
-    /* Define o cursor como ponteiro */
-    border-radius: 5px;
-    /* Borda arredondada */
-    font-size: 16px;
-    /* Tamanho da fonte do botão */
-    margin-right: 10px;
-    /* Espaçamento à direita do botão */
-    text-align: center;
-    /* Centraliza o texto dentro do botão */
-}
-
-/* Botões de adição (azuis) */
-.add-btn {
-    background-color: #0578f3;
-    /* Cor de fundo do botão de adição */
-    color: #fff;
-    /* Cor do texto no botão de adição */
-}
-
-/* Botões de remoção (vermelhos) */
-.remove-btn {
-    background-color: #dc3545;
-    /* Cor de fundo do botão de remoção */
-    color: #fff;
-    /* Cor do texto no botão de remoção */
-}
-
-/* Botão de selecionar arquivos (branco) */
-.button-select-file {
-    background-color: #fff;
-    /* Cor de fundo do botão de seleção de arquivo */
-    color: #000;
-    /* Cor do texto no botão de seleção de arquivo */
-}
-
-/* Botão de enviar fotos (verde) */
-.button-send-photo {
-    background-color: #28a745;
-    /* Cor de fundo do botão de enviar foto */
-    color: #fff;
-    /* Cor do texto no botão de enviar foto */
-}
-
-/* Estilizando o select */
-select {
-    font-family: Arial, sans-serif;
-    /* Define a fonte para o select */
-    font-size: 16px;
-    /* Tamanho da fonte do select */
-    color: #000;
-    /* Cor do texto no select */
-    max-width: calc(100% - 40px);
-    /* Largura máxima calculada para manter o conteúdo dentro da margem */
-    box-sizing: border-box;
-    /* Inclui padding e borda na largura total */
-    padding: 5px;
-    /* Espaçamento interno do select */
+.button-send-photo, .button-select-file {
     margin-bottom: 10px;
-    /* Espaçamento inferior do select */
-    font-weight: bold;
-    /* Texto em negrito no select */
+}
 }
 
+    </style>
+`;
 
-footer {
-    text-align: center;
-    /* Centraliza o conteúdo do footer */
-}
+;
 
-/* Estilizando o select */
-select#municipios3 {
-    font-family: Arial, sans-serif;
-    /* Mesma fonte dos cabeçalhos das tabelas */
-    font-size: 16px;
-    /* Mesmo tamanho de fonte dos cabeçalhos das tabelas */
-    color: #002c7d;
-    /* Mesma cor dos cabeçalhos das tabelas */
-    max-width: calc(100% - 40px);
-    /* Largura máxima calculada para manter o conteúdo dentro da margem */
-    box-sizing: border-box;
-    /* Inclui padding e borda na largura total */
-    padding: 5px;
-    /* Espaçamento interno do select */
-    margin-bottom: 10px;
-    /* Espaçamento inferior do select */
-    font-weight: bold;
-    /* Texto em negrito */
-    text-align: center;
-    /* Alinha o texto ao centro */
-    text-transform: uppercase;
-    /* Transforma o texto em maiúsculo */
-}
-
-
-
-/* Media Query para dispositivos móveis */
-@media only screen and (max-width: 600px) {
-
-    /* Ajustes específicos para dispositivos móveis */
-    .header-content {
-        flex-direction: column;
-        /* Altera a direção para coluna */
-        align-items: center;
-        /* Centraliza verticalmente */
-        text-align: center;
-        /* Centraliza o texto */
-    }
-
-    .brasao {
-        margin-bottom: 10px;
-        /* Espaçamento inferior do brasão */
-    }
-
-    .header-text p {
-        font-size: 14px;
-        /* Tamanho da fonte reduzido */
-    }
-
-    table {
-        font-size: 12px;
-        /* Reduz o tamanho da fonte da tabela */
-    }
-
-    th,
-    td {
-        padding: 5px;
-        /* Reduz o espaçamento interno das células */
-    }
-
-    .image-preview {
-        width: 100%;
-        /* Largura total para imagens */
-        height: auto;
-        /* Altura automática */
-    }
-
-    input[type="text"],
-    select {
-        width: 100%;
-        /* Largura total para inputs e selects */
-    }
-
-    .button-send-photo,
-    .button-select-file {
-        margin-bottom: 10px;
-        /* Espaçamento inferior dos botões */
-    }
-}
-
-@media only screen and (max-width: 600px) {
-
-    /* Ajustes específicos para dispositivos móveis */
-    .header-content {
-        flex-direction: column;
-        /* Altera a direção para coluna */
-        align-items: center;
-        /* Centraliza verticalmente */
-        text-align: center;
-        /* Centraliza o texto */
-    }
-
-    .brasao {
-        margin-bottom: 10px;
-        /* Espaçamento inferior do brasão */
-    }
-
-    .header-text p {
-        font-size: 14px;
-        /* Tamanho da fonte reduzido */
-    }
-
-    table {
-        font-size: 12px;
-        /* Reduz o tamanho da fonte da tabela */
-    }
-
-    th,
-    td {
-        padding: 5px;
-        /* Reduz o espaçamento interno das células */
-    }
-
-    .image-preview {
-        width: 100%;
-        /* Largura total para imagens */
-        height: auto;
-        /* Altura automática */
-    }
-
-    input[type="text"],
-    select {
-        width: 100%;
-        /* Largura total para inputs e selects */
-    }
-
-    .button-send-photo,
-    .button-select-file {
-        margin-bottom: 10px;
-        /* Espaçamento inferior dos botões */
-    }
-}
-
-
-body {
-    padding: 5%
-}
-    
-
-/* CSS do textarea */
-table td textarea {
-    width: 91.5%;
-    box-sizing: border-box; /* Inclui padding e border na largura total */
-    resize: vertical; /* Permite redimensionamento vertical */
-}
-
-/*CSS PARA COLOCAR MARGEM NA IMPRESSÃO */
-@page {
-                size: A4;
-                margin: 20mm 10mm; /* Margem superior e inferior de 20mm, e laterais de 10mm */
-            }
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-            }
-            .area_segura {
-                max-width: 100%;
-                width: 100%;
-                height: auto;
-                margin: 0 auto; /* Centraliza horizontalmente */
-            }
-        </style>
-    `;
-
-
-    // JS DA PORRA DO PDF
     // Abrindo uma nova janela
     const win = window.open('', '', 'height=700, width=700');
     win.document.write('<html><head><title>Recon</title>');
     win.document.write(estilo); // Inclui os estilos CSS no cabeçalho do documento
     win.document.write('</head><body>');
 
-    // Adicionando o conteúdo clonado ao documento da nova janela
-    win.document.body.appendChild(content);
-
-    // Capturando dados dos inputs e textareas nas tabelas
-    const tables = win.document.getElementsByTagName('table');
+    // Atualizando os valores dos inputs e textareas nas tabelas do conteúdo clonado
+    const tables = content.getElementsByTagName('table');
     for (let table of tables) {
         const rows = table.getElementsByTagName('tr');
         for (let row of rows) {
@@ -1112,19 +844,29 @@ table td textarea {
             for (let cell of cells) {
                 const inputs = cell.getElementsByTagName('input');
                 for (let input of inputs) {
-                    win.document.write(input.value + ' '); // Adiciona valor do input
+                    const span = document.createElement('span');
+                    span.textContent = input.value;
+                    cell.replaceChild(span, input); // Substitui o input pelo span contendo o valor do input
                 }
                 const textareas = cell.getElementsByTagName('textarea');
                 for (let textarea of textareas) {
-                    win.document.write(textarea.value + ' '); // Adiciona valor da textarea
+                    const span = document.createElement('span');
+                    span.textContent = textarea.value;
+                    cell.replaceChild(span, textarea); // Substitui a textarea pelo span contendo o valor da textarea
                 }
             }
         }
     }
 
+    // Adicionando o conteúdo clonado ao documento da nova janela
+    win.document.body.appendChild(content);
+
     win.document.write('</body></html>');
     win.print();
 });
+
+
+
 
 
 
