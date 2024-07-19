@@ -23,16 +23,18 @@
         </header>
 
         <main>
-            <h4>INFORMATIVO DE VIAGEM AO MUNICÍPIO DE <input type="text" id="municipio" placeholder="PONTO BELO"><br></h4>       
+            <h4>INFORMATIVO DE VIAGEM AO MUNICÍPIO DE <input type="text" id="municipio" placeholder="PONTO BELO"><br>
+            </h4>
             <th><input type="text" placeholder="Informativo da agenda" id="entrada-texto"></th>
             <h4>AGENDA ANTERIOR NO MUNICÍPIO<BR>
-            <input type="text" placeholder="Resumo da agenda" id="entrada-texto"></h4><br>
+                <input type="text" placeholder="Resumo da agenda" id="entrada-texto">
+            </h4><br>
 
 
 
 
             <!-- Tabela de contatos -->
-            <div>
+            <content>
                 <p><strong>CONTATOS TELEFÔNICOS:</strong></p>
                 <table id="contatos-table">
                     <thead>
@@ -49,10 +51,10 @@
                     </tbody>
                 </table>
                 <button id="add-contato" class="add-btn">Adicionar Contato</button>
-            </div><br>
+            </content><br>
 
             <!-- Tabela de Militares -->
-            <div>
+            <content>
                 <strong>
                     <p>CONTATOS DA ORGANIZAÇÃO POLICIAL MILITAR:</p>
                 </strong>
@@ -72,10 +74,10 @@
                     </tbody>
                 </table>
                 <button id="addmilitar" class="add-btn">Adicionar Militar</button>
-            </div><br>
+            </content><br>
 
             <!-- Tabela com a programação da agenda -->
-            <div>
+            <content>
                 <strong>
                     <p>PROGRAMAÇÃO:</p>
                 </strong>
@@ -92,10 +94,10 @@
                     </tbody>
                 </table><br>
                 <button class="add-btn" id="add-atividade">Adicionar Atividade</button>
-            </div><br>
+            </content><br>
 
             <!-- Dados da Comitiva -->
-            <div>
+            <content>
                 <strong>
                     <p>COMITIVA</p>
                 </strong>
@@ -123,8 +125,8 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-            <div>
+            </content>
+            <content>
                 <table id="myTable">
                     <thead>
                         <tr>
@@ -138,10 +140,10 @@
                     </tbody>
                 </table>
                 <button id="addIntegrante" class="add-btn">Adicionar Integrante</button>
-            </div><br>
+            </content><br>
 
             <!-- DADOS DA SEGURANÇA -->
-            <div>
+            <content>
                 <strong>
                     <p>DADOS DA SEGURANÇA:</p>
                 </strong>
@@ -163,89 +165,93 @@
                     </tbody>
                 </table>
                 <button id="add-deslocamento" class="add-btn">Adicionar Deslocamento</button>
-            </div><br>
+            </content><br>
 
             <!-- DADOS DO LOCAL DO EVENTO -->
-            <strong>
-                <p>DADOS DO LOCAL DO EVENTO</p>
-            </strong>
-            <table id="localdoevento-table">
-                <thead>
-                    <tr>
-                        <th>Descrição</th>
-                        <th>Informação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Estacionamento:</td>
-                        <td><input type="text" placeholder="Informe sobre estacionamento"></td>
-                    </tr>
-                    <tr>
-                        <td>Palanque:</td>
-                        <td><input type="text" placeholder="Informe sobre palanque"></td>
-                    </tr>
-                    <tr>
-                        <td>Tenda:</td>
-                        <td><input type="text" placeholder="Informe sobre tenda"></td>
-                    </tr>
-                    <tr>
-                        <td>Elevador:</td>
-                        <td><input type="text" placeholder="Informe sobre elevador"></td>
-                    </tr>
-                    <tr>
-                        <td>Hospital:</td>
-                        <td><input type="text" placeholder="Informe sobre hospital"></td>
-                    </tr>
-                    <tr>
-                        <td>Postos de Abastecimento:</td>
-                        <td><input type="text" placeholder="Informe sobre postos de abastecimento"></td>
-                    </tr>
-                    <tr>
-                        <td>Movimentações Adversas:</td>
-                        <td><input type="text" placeholder="Informe sobre movimentações adversas"></td>
-                    </tr>
-                    <tr>
-                        <td>Previsão de Público:</td>
-                        <td><input type="text" placeholder="Informe a previsão de público"></td>
-                    </tr>
-                    <tr>
-                        <td>Sinal de Telefonia:</td>
-                        <td><input type="text" placeholder="Informe sobre sinal de telefonia"></td>
-                    </tr>
-                </tbody>
-            </table><br>
+            <content>
+                <strong>
+                    <p>DADOS DO LOCAL DO EVENTO</p>
+                </strong>
+                <table id="localdoevento-table">
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Informação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Estacionamento:</td>
+                            <td><input type="text" placeholder="Informe sobre estacionamento"></td>
+                        </tr>
+                        <tr>
+                            <td>Palanque:</td>
+                            <td><input type="text" placeholder="Informe sobre palanque"></td>
+                        </tr>
+                        <tr>
+                            <td>Tenda:</td>
+                            <td><input type="text" placeholder="Informe sobre tenda"></td>
+                        </tr>
+                        <tr>
+                            <td>Elevador:</td>
+                            <td><input type="text" placeholder="Informe sobre elevador"></td>
+                        </tr>
+                        <tr>
+                            <td>Hospital:</td>
+                            <td><input type="text" placeholder="Informe sobre hospital"></td>
+                        </tr>
+                        <tr>
+                            <td>Postos de Abastecimento:</td>
+                            <td><input type="text" placeholder="Informe sobre postos de abastecimento"></td>
+                        </tr>
+                        <tr>
+                            <td>Movimentações Adversas:</td>
+                            <td><input type="text" placeholder="Informe sobre movimentações adversas"></td>
+                        </tr>
+                        <tr>
+                            <td>Previsão de Público:</td>
+                            <td><input type="text" placeholder="Informe a previsão de público"></td>
+                        </tr>
+                        <tr>
+                            <td>Sinal de Telefonia:</td>
+                            <td><input type="text" placeholder="Informe sobre sinal de telefonia"></td>
+                        </tr>
+                    </tbody>
+                </table><br>
+            </content>
 
 
             <!--DADOS DO CERIMONIAL-->
-            <strong>
-                <p>DADOS DO CERIMONIAL:</p>
-            </strong>
-            <table id="cerimonial-table">
-                <thead>
-                    <tr>
-                        <th>Descrição</th>
-                        <th>Informação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Sonorização:</td>
-                        <td><input type="text" placeholder="Digite a informação sobre sonorização"></td>
-                    </tr>
-                    <tr>
-                        <td>Autoridades Convidadas:</td>
-                        <td><input type="text" placeholder="Digite a informação sobre autoridades convidadas"></td>
-                    </tr>
-                    <tr>
-                        <td>Mestre de Ceromônia:</td>
-                        <td><input type="text" placeholder="Digite a informação sobre o mestre de cerimônia"></td>
-                    </tr>
-                </tbody>
-            </table><br>
+            <content>
+                <strong>
+                    <p>DADOS DO CERIMONIAL:</p>
+                </strong>
+                <table id="cerimonial-table">
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Informação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sonorização:</td>
+                            <td><input type="text" placeholder="Digite a informação sobre sonorização"></td>
+                        </tr>
+                        <tr>
+                            <td>Autoridades Convidadas:</td>
+                            <td><input type="text" placeholder="Digite a informação sobre autoridades convidadas"></td>
+                        </tr>
+                        <tr>
+                            <td>Mestre de Ceromônia:</td>
+                            <td><input type="text" placeholder="Digite a informação sobre o mestre de cerimônia"></td>
+                        </tr>
+                    </tbody>
+                </table><br>
+            </content>
 
             <!--DADOS DO DESLOCAMENTO AÉREO-->
-            <div>
+            <content>
                 <strong>
                     <p>DADOS DO DESLOCAMENTO AÉREO:</p>
                 </strong>
@@ -266,101 +272,110 @@
                     </tbody>
                 </table>
                 <button id="add-voo" class="add-btn">Adicionar Voo</button>
-            </div><br>
+            </content><br>
 
             <!-- DADO DO LOCAL DO POUSO-->
             <div id="pouso-sections-container">
                 <div class="pouso-section" data-section-number="11">
                     <!-- TABELA DOS DADOS DO LOCAL DO POUSO -->
-                    <strong>
-                        <p>DADOS DO LOCAL DO POUSO 1 <td><input type="text" placeholder="Informe o local do pouso" id="entrada-texto">
-                            </td>
-                        </p>
-                    </strong>
-                    <table id="pouso">
-                        <thead>
-                            <tr>
-                                <th>Informações</th>
-                                <th>Entradas</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Local de Pouso:</td>
-                                <td><input type="text" placeholder="Informe o local de pouso" id="entrada-texto"></td>
-                            </tr>
-                            <tr>
-                                <td>Tipo de Piso:</td>
-                                <td><input type="text" placeholder="Informe o tipo de piso"></td>
-                            </tr>
-                            <tr>
-                                <td>Isolamento:</td>
-                                <td><input type="text" placeholder="Informe se tem isolamento"></td>
-                            </tr>
-                            <tr>
-                                <td>Local Iluminado:</td>
-                                <td><input type="text" placeholder="Informe se o local é iluminado"></td>
-                            </tr>
-                            <tr>
-                                <td>Obstáculos:</td>
-                                <td><textarea id="obstaculos" placeholder="Informe os obstáculos"></textarea></td>
-                            </tr>
-                            <tr>
-                                <td>Local para Abastecimento:</td>
-                                <td><input type="text" placeholder="Informe se tem local para abastecimento"></td>
-                            </tr>
-                            <tr>
-                                <td>Responsável pelo Local:</td>
-                                <td><input type="text" placeholder="Informe o nome e contato do responsável pelo local">
+                    <content>
+                        <strong>
+                            <p>DADOS DO LOCAL DO POUSO 1 <td><input type="text" placeholder="Informe o local do pouso"
+                                        id="entrada-texto">
                                 </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            </p>
+                        </strong>
+                        <table id="pouso">
+                            <thead>
+                                <tr>
+                                    <th>Informações</th>
+                                    <th>Entradas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Local de Pouso:</td>
+                                    <td><input type="text" placeholder="Informe o local de pouso" id="entrada-texto">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Tipo de Piso:</td>
+                                    <td><input type="text" placeholder="Informe o tipo de piso"></td>
+                                </tr>
+                                <tr>
+                                    <td>Isolamento:</td>
+                                    <td><input type="text" placeholder="Informe se tem isolamento"></td>
+                                </tr>
+                                <tr>
+                                    <td>Local Iluminado:</td>
+                                    <td><input type="text" placeholder="Informe se o local é iluminado"></td>
+                                </tr>
+                                <tr>
+                                    <td>Obstáculos:</td>
+                                    <td><textarea id="obstaculos" placeholder="Informe os obstáculos"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>Local para Abastecimento:</td>
+                                    <td><input type="text" placeholder="Informe se tem local para abastecimento"></td>
+                                </tr>
+                                <tr>
+                                    <td>Responsável pelo Local:</td>
+                                    <td><input type="text"
+                                            placeholder="Informe o nome e contato do responsável pelo local">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </content>
 
                     <!-- DADOS DO LOCAL DE POUSO -->
-                    <strong>
-                        <p>COORDENADAS DO LOCAL DE POUSO 1 <td><input type="text" id="entrada-texto"
-                                    placeholder="Informe o local do pouso"></td>
-                        </p>
-                    </strong>
-                    <table border="1">
-                        <tbody>
-                            <tr class="red-text">
-                                <td><input type="text" placeholder="" id="coordenada"></td>
-                                <td><input type="text" placeholder="Informe a latitude" id="coordenada2"></td>
-                                <td><input type="text" placeholder="" id="coordenada"></td>
-                                <td><input type="text" placeholder="Informe a longitude" id="coordenada2"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="4">          
-                                     <input type="url" id="link" name="link" placeholder="Link da coordnada">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                    <content>
+                        <strong>
+                            <p>COORDENADAS DO LOCAL DE POUSO 1 <td><input type="text" id="entrada-texto"
+                                        placeholder="Informe o local do pouso"></td>
+                            </p>
+                        </strong>
+                        <table border="1">
+                            <tbody>
+                                <tr class="red-text">
+                                    <td><input type="text" placeholder="" id="coordenada"></td>
+                                    <td><input type="text" placeholder="Informe a latitude" id="coordenada2"></td>
+                                    <td><input type="text" placeholder="" id="coordenada"></td>
+                                    <td><input type="text" placeholder="Informe a longitude" id="coordenada2"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <input type="url" id="link" name="link" placeholder="Link da coordnada">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </content>
 
                     <!-- FOTOGRAFIAS DO LOCAL DE POUSO -->
-                    <strong>
-                        <p>FOTOGRAFIAS DO LOCAL DO POUSO 1</p>
-                    </strong>
-                    <form id="uploadForm" enctype="multipart/form-data">
-                        <input type="file" id="fileInput1" name="fileInput" accept="image/*">
-                        <input type="file" id="fileInput2" name="fileInput" accept="image/*">
-                        <input type="file" id="fileInput3" name="fileInput" accept="image/*">
-                        <button type="submit" class="add-btn">Enviar Fotos</button>
-                    </form>
-
-                    <div class="image-container">
-                        <div id="imagePreview1" class="image-preview">
-                            <img id="previewImage1" src="#" alt="Imagem 1">
-                        </div>
-                        <div id="imagePreview2" class="image-preview">
-                            <img id="previewImage2" src="#" alt="Imagem 2">
-                        </div>
-                        <div id="imagePreview3" class="image-preview">
-                            <img id="previewImage3" src="#" alt="Imagem 3">
-                        </div>
-                    </div>
+                    <content>
+                        <strong>
+                            <p>FOTOGRAFIAS DO LOCAL DO POUSO 1</p>
+                        </strong>
+                        <form id="uploadForm" enctype="multipart/form-data">
+                            <input type="file" id="fileInput1" name="fileInput" accept="image/*">
+                            <input type="file" id="fileInput2" name="fileInput" accept="image/*">
+                            <input type="file" id="fileInput3" name="fileInput" accept="image/*">
+                            <button type="submit" class="add-btn">Enviar Fotos</button>
+                            <div class="image-container">
+                                <div id="imagePreview1" class="image-preview">
+                                    <img id="previewImage1" src="#" alt="Imagem 1">
+                                </div>
+                                <div id="imagePreview2" class="image-preview">
+                                    <img id="previewImage2" src="#" alt="Imagem 2">
+                                </div>
+                                <div id="imagePreview3" class="image-preview">
+                                    <img id="previewImage3" src="#" alt="Imagem 3">
+                                </div>
+                            </div>
+                        </form>
+                    </content>
                 </div>
             </div>
             <div id="pouso-sections-container">
@@ -372,111 +387,123 @@
             <button id="addLocalBtn" class="add-btn">Adicionar local de pouso</button><br>
 
             <!--Ára de segurança do helicóptero imagem-->
-            <br><strong>
-                <p>ÁREA DE SEGURANÇA DO HELICÓPTERO</p>
-            </strong>
-            <img src="assets/images/area_segura_pouso.png" alt="Área de segurança do helicópetero"
-                class="area_segura"><br>
+            <content>
+                <br><strong>
+                    <p>ÁREA DE SEGURANÇA DO HELICÓPTERO</p>
+                </strong>
+                <img src="assets/images/area_segura_pouso.png" alt="Área de segurança do helicópetero"
+                    class="area_segura"><br>
+            </content>
 
-            <br><br><h4>INFORMAÇÕES DA POLÍTICA DO MUNICÍPIO DE <input type="text" id="municipio"></h4><br>
+            <content>
+                <br><br>
+                <h4>INFORMAÇÕES DA POLÍTICA DO MUNICÍPIO DE <input type="text" id="municipio"></h4><br>
                 <input type="text" id="entrada-texto"
                     placeholder="Ex: O Prefeito Fulano de Tal (Partido) foi eleito no último pleito, com 55,97% dos votos, total de 9.668 dos votos válidos"><br>
+            </content>
 
             <!-- TABELA COM AS EUIPES DE SERVIÇO-->
-            <br><br> <strong>
-                <p>EQUIPES DE SERVIÇO</p>
-            </strong>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Vitória</th>
-                        <th>Celular</th>
-                        <th><input type="text" placeholder="Município da agenda" , id="municipio-viagem"></th>
-                        <th>Celular</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                    </tr>
-                    <!-- Linha em branco para separação -->
-                    <tr>
-                        <td colspan="4">&nbsp;</td>
-                    </tr>
-                    <!-- Novo bloco de tabela -->
-                    <tr>
-                        <td colspan="2">Equipe de RPA</td>
-                        <td colspan="2">NOE</td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                        <td><input type="text" placeholder="Militar"></td>
-                        <td><input type="text" placeholder="Celular"></td>
-                    </tr>
-                </tbody>
-            </table><br>
+            <content>
+                <br><br> <strong>
+                    <p>EQUIPES DE SERVIÇO</p>
+                </strong>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Vitória</th>
+                            <th>Celular</th>
+                            <th><input type="text" placeholder="Município da agenda" , id="municipio-viagem"></th>
+                            <th>Celular</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                        </tr>
+                        <!-- Linha em branco para separação -->
+                        <tr>
+                            <td colspan="4">&nbsp;</td>
+                        </tr>
+                        <!-- Novo bloco de tabela -->
+                        <tr>
+                            <th colspan="2">Equipe de RPA</th>
+                            <th colspan="2">NOE</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                            <td><input type="text" placeholder="Militar"></td>
+                            <td><input type="text" placeholder="Celular"></td>
+                        </tr>
+                    </tbody>
+                </table><br>
+            </content>
 
             <!--Input para observações-->
+            <content>
                 <h4>Observações<textarea id="observacoes" placeholder="Informe as observações"></textarea></h4><br>
-            <strong>
+                <strong>
+            </content>
+            <content>
                 <p>DEVOLUÇÃO DOS VEÍCULOS: CONSULTAR O NÚCLEO DE OPERAÇÕES ESPECIAIS - NOE.</p>
-            </strong><BR>
-            <strong>
-                <p>ELABORAÇÃO: <input type="text" placeholder="Responsável pelo Recon" maxlength="30"
-                        style="max-width: 200px;"></p>
-            </strong><br>
+                </strong><BR>
+                <strong>
+                    <p>ELABORAÇÃO: <input type="text" placeholder="Responsável pelo Recon" maxlength="30"
+                            style="max-width: 200px;">
+                    </p>
+                </strong><br>
+            </content>
         </main>
         <footer>
             <br><strong>

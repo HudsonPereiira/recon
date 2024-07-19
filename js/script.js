@@ -414,81 +414,85 @@ document.addEventListener("DOMContentLoaded", function () {
         pousoSection.setAttribute('data-section-number', number);
 
         pousoSection.innerHTML = `
+            <content>
+                <strong>
+                    <p>DADOS DO LOCAL DO POUSO ${number}: <input type="text" placeholder="Informe o local do pouso"></p>
+                </strong>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Informações</th>
+                            <th>Entradas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Local de Pouso:</td>
+                            <td><input type="text" placeholder="Informe o local de pouso"></td>
+                        </tr>
+                        <tr>
+                            <td>Tipo de Piso:</td>
+                            <td><input type="text" placeholder="Informe o tipo de piso"></td>
+                        </tr>
+                        <tr>
+                            <td>Isolamento:</td>
+                            <td><input type="text" placeholder="Informe se tem isolamento"></td>
+                        </tr>
+                        <tr>
+                            <td>Local Iluminado:</td>
+                            <td><input type="text" placeholder="Informe se o local é iluminado"></td>
+                        </tr>
+                        <tr>
+                            <td>Obstáculos:</td>
+                            <td><textarea id="obstaculos" placeholder="Informe os obstáculos"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Local para Abastecimento:</td>
+                            <td><input type="text" placeholder="Informe se tem local para abastecimento"></td>
+                        </tr>
+                        <tr>
+                            <td>Responsável pelo Local:</td>
+                            <td><input type="text" placeholder="Informe o nome e contato do responsável pelo local"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </content>
             <strong>
-                <p>DADOS DO LOCAL DO POUSO ${number}: <input type="text" placeholder="Informe o local do pouso"></p>
-            </strong>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Informações</th>
-                        <th>Entradas</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Local de Pouso:</td>
-                        <td><input type="text" placeholder="Informe o local de pouso"></td>
-                    </tr>
-                    <tr>
-                        <td>Tipo de Piso:</td>
-                        <td><input type="text" placeholder="Informe o tipo de piso"></td>
-                    </tr>
-                    <tr>
-                        <td>Isolamento:</td>
-                        <td><input type="text" placeholder="Informe se tem isolamento"></td>
-                    </tr>
-                    <tr>
-                        <td>Local Iluminado:</td>
-                        <td><input type="text" placeholder="Informe se o local é iluminado"></td>
-                    </tr>
-                    <tr>
-                        <td>Obstáculos:</td>
-                        <td><textarea id="obstaculos" placeholder="Informe os obstáculos"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>Local para Abastecimento:</td>
-                        <td><input type="text" placeholder="Informe se tem local para abastecimento"></td>
-                    </tr>
-                    <tr>
-                        <td>Responsável pelo Local:</td>
-                        <td><input type="text" placeholder="Informe o nome e contato do responsável pelo local"></td>
-                    </tr>
-                </tbody>
-            </table>
-        
-            <strong>
-                <p>COORDENADAS DO LOCAL DE POUSO ${number}: <input type="text" placeholder="Informe o local do pouso"></p>
-            </strong>
-            <table border="1">
-                        <tbody>
-                            <tr class="red-text">
-                                <td><input type="text" placeholder="" id="coordenada"></td>
-                                <td><input type="text" placeholder="Informe a latitude" id="coordenada2"></td>
-                                <td><input type="text" placeholder="" id="coordenada"></td>
-                                <td><input type="text" placeholder="Informe a longitude" id="coordenada2"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="4">          
-                                     <input type="url" id="link" name="link" placeholder="Link da coordnada">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-        
-            <strong>
-                <p>FOTOGRAFIAS DO LOCAL DO POUSO ${number}:</p>
-            </strong>
-          <form id="uploadForm${number}" enctype="multipart/form-data">
-        <input type="file" id="fileInput${number}_1" name="fileInput" accept="image/*">
-        <input type="file" id="fileInput${number}_2" name="fileInput" accept="image/*">
-        <input type="file" id="fileInput${number}_3" name="fileInput" accept="image/*">
-        <button type="button" class="add-btn">Enviar Fotos</button>
-        <div class="image-container">
-        <div class="image-preview" id="imagePreview${number}_1"></div>
-        <div class="image-preview" id="imagePreview${number}_2"></div>
-        <div class="image-preview" id="imagePreview${number}_3"></div>
-        </div>
-        </form>
+                <strong>
+                    <p>COORDENADAS DO LOCAL DE POUSO ${number}: <input type="text" placeholder="Informe o local do pouso"></p>
+                </strong>
+                <table border="1">
+                            <tbody>
+                                <tr class="red-text">
+                                    <td><input type="text" placeholder="" id="coordenada"></td>
+                                    <td><input type="text" placeholder="Informe a latitude" id="coordenada2"></td>
+                                    <td><input type="text" placeholder="" id="coordenada"></td>
+                                    <td><input type="text" placeholder="Informe a longitude" id="coordenada2"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">          
+                                        <input type="url" id="link" name="link" placeholder="Link da coordnada">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+            </content>
+            <content>
+                <strong>
+                    <p>FOTOGRAFIAS DO LOCAL DO POUSO ${number}:</p>
+                </strong>
+            <form id="uploadForm${number}" enctype="multipart/form-data">
+            <input type="file" id="fileInput${number}_1" name="fileInput" accept="image/*">
+            <input type="file" id="fileInput${number}_2" name="fileInput" accept="image/*">
+            <input type="file" id="fileInput${number}_3" name="fileInput" accept="image/*">
+            <button type="button" class="add-btn">Enviar Fotos</button>
+            <div class="image-container">
+            <div class="image-preview" id="imagePreview${number}_1"></div>
+            <div class="image-preview" id="imagePreview${number}_2"></div>
+            <div class="image-preview" id="imagePreview${number}_3"></div>
+            </div>
+            </form>
+        </content>
         
             <button class="remove-btn">Remover local de pouso</button><br><br>
         `;
@@ -597,237 +601,238 @@ downloadPdf.addEventListener("click", (evt) => {
     const content = document.getElementById("content").cloneNode(true); // Clona o elemento #content com todos os seus descendentes
 
     // Estilos CSS para o documento PDF
-    const estilo = `
-    <style>
+    const estilo = 
+        `<style>
     /* Estilos gerais */
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-color: #000;
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color: #f0f0f0;
-}
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f0f0f0;
+    }
 
-/* Estilos do cabeçalho */
-header {
-background-color: #002c7d;
-color: #ffffff;
-padding: 20px 0;
-text-align: center;
-width: 100%;
-box-sizing: border-box;
-}
+    /* Estilos do cabeçalho */
+    header {
+        background-color: #002c7d;
+        color: #ffffff;
+        padding: 20px 0;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-.header-content {
-max-width: 800px;
-width: 100%;
-margin: 0 auto;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-}
+    .header-content {
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 
-.brasao {
-width: 80px;
-height: auto;
-margin-right: 10px;
-}
+    .brasao {
+        width: 80px;
+        height: auto;
+        margin-right: 10px;
+    }
 
-.header-text {
-text-align: center;
-}
+    .header-text {
+        text-align: center;
+    }
 
-.header-text p {
-font-size: 16px;
-margin: 5px 0;
-text-transform: uppercase;
-}
+    .header-text p {
+        font-size: 16px;
+        margin: 5px 0;
+        text-transform: uppercase;
+    }
 
-/* Estilos da tabela */
-table {
-width: 100%;
-border-collapse: collapse;
-margin-bottom: 20px;
-border: 2px solid #002c7d;
-}
+    /* Estilos da tabela */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        border: 2px solid #002c7d;
+    }
 
-th, td {
-border: 1px solid #002c7d;
-padding: 8px;
-text-align: center;
-}
+    th, td {
+        border: 1px solid #002c7d;
+        padding: 8px;
+        text-align: center;
+    }
 
-th {
-background-color: #f2f2f2;
-color: #002c7d;
-font-weight: bold;
-text-transform: uppercase;
-}
+    th {
+        background-color: #f2f2f2;
+        color: #00050c;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 
-/* Estilos dos inputs e textareas */
-input[type="text"], textarea {
-width: 91.5%;
-box-sizing: border-box;
-text-align: center;
-}
+    /* Estilos dos inputs e textareas */
+    input[type="text"], textarea {
+        width: 91.5%;
+        box-sizing: border-box;
+        text-align: center;
+    }
 
-input[type="text"]::placeholder {
-text-align: center;
-}
+    input[type="text"]::placeholder {
+        text-align: center;
+    }
 
-/* Estilos dos botões */
-button {
-padding: 10px 20px;
-border: none;
-cursor: pointer;
-border-radius: 5px;
-font-size: 16px;
-margin-right: 10px;
-text-align: center;
-}
+    /* Estilos dos botões */
+    button {
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-right: 10px;
+        text-align: center;
+    }
 
-.add-btn {
-background-color: #0578f3;
-color: #fff;
-}
+    .add-btn {
+        background-color: #0578f3;
+        color: #fff;
+    }
 
-.remove-btn {
-background-color: #dc3545;
-color: #fff;
-}
+    .remove-btn {
+        background-color: #dc3545;
+        color: #fff;
+    }
 
-.button-select-file {
-background-color: #fff;
-color: #000;
-}
+    .button-select-file {
+        background-color: #fff;
+        color: #000;
+    }
 
-.button-send-photo {
-background-color: #28a745;
-color: #fff;
-}
+    .button-send-photo {
+        background-color: #28a745;
+        color: #fff;
+    }
 
-footer {
-text-align: center;
-}
+    footer {
+        text-align: center;
+    }
 
-/* Estilos específicos para inputs */
+    /* Estilos específicos para inputs */
+    #municipio-viagem, #municipio, #link, #coordenada, #coordenada2 {
+        font-family: Arial, sans-serif;
+        border: 1px solid #ccc;
+        padding: 5px;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
 
-#municipio-viagem, #municipio, #link, #coordenada, #coordenada2 {
-font-family: Arial, sans-serif;
-border: 1px solid #ccc;
-padding: 5px;
-display: inline-block;
-font-size: 16px;
-font-weight: bold;
-text-align: center;
-}
+    #municipio {
+        width: 20%;
+        color: #00040a;
+    }
 
-#municipio {
-width: 20%;
-color: #00040a;
-}
+    #municipio-viagem {
+        width: 100%;
+        color: #010409;
+    }
 
-#municipio-viagem {
-width: 100%;
-color: #002c7d;
-}
+    #link {
+        width: 50%;
+        color: #0039a4;
+    }
 
-#link {
-width: 50%;
-color: #0039a4;
-}
+    #coordenada {
+        width: 15%;
+        color: #f70019;
+    }
 
-#coordenada {
-width: 15%;
-color: #f70019;
-}
+    #coordenada2 {
+        width: 100%;
+        color: #f70019;
+    }
 
-#coordenada2 {
-width: 100%;
-color: #f70019;
-}
+    /* Estilo das fotos carregadas */
+    .image-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        width: calc(100% - 40px);
+        box-sizing: border-box;
+    }
 
-/* Estilo das fotos carregadas */
-.image-container {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-margin-top: 20px;
-width: calc(100% - 40px);
-box-sizing: border-box;
-}
+    .image-preview {
+        max-width: 5cm;
+        max-height: 3cm;
+        border: 2px solid #ffffff;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
 
-.image-preview {
-max-width: 5cm;
-max-height: 3cm;
-border: 4px solid #ffffff;
-overflow: hidden;
-margin-bottom: 10px;
-}
+    .image-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-.image-preview img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
+    /* Estilização da área de segurança da aeronave */
+    .area_segura {
+        max-width: 50%;
+        width: 50%;
+        height: auto;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center;
+    }
 
-/* Estilização da área de segurança da aeronave */
-.area_segura {
-max-width: 100%;
-width: 100%;
-max-height: 10cm;
-height: 5%;
-justify-content: center; /* Centraliza horizontalmente */
-align-items: center;
-}
+    /* Responsividade */
+    @media only screen and (max-width: 600px) {
+        .header-content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
 
+        .brasao {
+            margin-bottom: 10px;
+        }
 
-/* Responsividade */
-@media only screen and (max-width: 600px) {
-.header-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
+        .header-text p {
+            font-size: 14px;
+        }
 
-.brasao {
-    margin-bottom: 10px;
-}
+        table {
+            font-size: 12px;
+        }
 
-.header-text p {
-    font-size: 14px;
-}
+        th, td {
+            padding: 5px;
+        }
 
-table {
-    font-size: 12px;
-}
+        .image-preview {
+            width: 100%;
+            height: auto;
+        }
 
-th, td {
-    padding: 5px;
-}
+        input[type="text"], select {
+            width: 100%;
+        }
 
-.image-preview {
-    width: 100%;
-    height: auto;
-}
+        .button-send-photo, .button-select-file {
+            margin-bottom: 10px;
+        }
+    }
 
-input[type="text"], select {
-    width: 100%;
-}
-
-.button-send-photo, .button-select-file {
-    margin-bottom: 10px;
-}
-}
-
-    </style>
-`;
-
-;
+    /* Estilo dos spans que substituem inputs */
+    .input-value {
+        color: blue;
+    }
+    .coordinate-value {
+        color: red;
+    }
+    </style>`;
 
     // Abrindo uma nova janela
     const win = window.open('', '', 'height=700, width=700');
@@ -846,6 +851,13 @@ input[type="text"], select {
                 for (let input of inputs) {
                     const span = document.createElement('span');
                     span.textContent = input.value;
+
+                    if (input.id === 'link') {
+                        span.classList.add('input-value'); // Adiciona a classe para azul
+                    } else if (input.id === 'coordenada' || input.id === 'coordenada2') {
+                        span.classList.add('coordinate-value'); // Adiciona a classe para vermelho
+                    }
+
                     cell.replaceChild(span, input); // Substitui o input pelo span contendo o valor do input
                 }
                 const textareas = cell.getElementsByTagName('textarea');
