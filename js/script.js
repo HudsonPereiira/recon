@@ -324,7 +324,7 @@ document.getElementById('add-voo').addEventListener('click', function () {
 
 
 
-// JS PARA CARREGAR AS FOTOS DO LOCAL DE POUSO
+// JS PARA CARREGAR AS FOTOS DO LOCAL DO POUSO
 document.getElementById('uploadForm').addEventListener('submit', function (event) {
     event.preventDefault();
     var formData = new FormData(this);
@@ -357,7 +357,7 @@ document.getElementById('uploadForm').addEventListener('submit', function (event
 
 
 
-//JS PARA ENVIO DAS FOTOS DO LOCAL DE POUSO
+//JS PARA ENVIO DAS FOTOS DO LOCAL DO POUSO
 // scripts.js
 document.getElementById('uploadForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Evita o envio padrão do formulário
@@ -409,7 +409,7 @@ function toRoman(num) {
 }
 
 
-//JS para adicionar dinamicamente, novos locais de pouso
+//JS para adicionar dinamicamente, novos locais do pouso
 document.addEventListener("DOMContentLoaded", function () {
     let pousoCount = 1;
 
@@ -439,8 +439,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Local de Pouso:</td>
-                            <td><input type="text" placeholder="Informe o local de pouso"></td>
+                            <td>Local do Pouso:</td>
+                            <td><input type="text" placeholder="Informe o local do pouso"></td>
                         </tr>
                         <tr>
                             <td>Tipo de Piso:</td>
@@ -471,7 +471,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </content>
             <strong>
                 <strong>
-                    <p>COORDENADAS DO LOCAL DE POUSO ${toRoman(number)} <input type="text" placeholder="Informe o local do pouso"></p>
+                    <p>COORDENADAS DO LOCAL DO POUSO ${toRoman(number)} <input type="text" placeholder="Informe o local do pouso"></p>
                 </strong>
                 <table border="1">
                             <tbody>
@@ -506,7 +506,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </form>
         </content>
         
-            <button class="remove-btn">Remover local de pouso</button><br><br>
+            <button class="remove-btn">Remover local do pouso</button><br><br>
         `;
 
         pousoContainer.appendChild(pousoSection);
@@ -574,14 +574,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    //JS para reorganizar a fila do local de pouso
+    //JS para reorganizar a fila do local do pouso
     function reorganizeSections() {
         const sections = pousoContainer.querySelectorAll('.pouso-section');
         sections.forEach((section, index) => {
             const newIndex = index + 1;
             section.setAttribute('data-section-number', newIndex);
             section.querySelector('strong p').innerHTML = `DADOS DO LOCAL DO POUSO ${newIndex}: <input type="text" placeholder="Informe o local do pouso">`;
-            section.querySelectorAll('strong')[1].querySelector('p').innerHTML = `COORDENADAS DO LOCAL DE POUSO ${newIndex}: <input type="text" placeholder="Informe o local do pouso">`;
+            section.querySelectorAll('strong')[1].querySelector('p').innerHTML = `COORDENADAS DO LOCAL DO POUSO ${newIndex}: <input type="text" placeholder="Informe o local do pouso">`;
             section.querySelectorAll('strong')[2].querySelector('p').innerHTML = `FOTOGRAFIAS DO LOCAL DO POUSO ${newIndex}:`;
             section.querySelector('form').id = `uploadForm${newIndex}`;
             const inputs = section.querySelectorAll('input[type="file"]');
