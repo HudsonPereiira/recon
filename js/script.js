@@ -832,6 +832,19 @@ downloadPdf.addEventListener("click", (evt) => {
     .coordinate-value {
         color: red;
     }
+                @page {
+                margin: 2cm;
+            }
+            body {
+                margin: 2cm;
+            }
+            .input-value {
+                color: blue;
+            }
+            .coordinate-value {
+                color: red;
+            }
+    
     </style>`;
 
     // Abrindo uma nova janela
