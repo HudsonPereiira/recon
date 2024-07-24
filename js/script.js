@@ -735,14 +735,16 @@ downloadPdf.addEventListener("click", (evt) => {
     }
 
     /* Estilos específicos para inputs */
-    #municipio-viagem, #municipio,{
-        font-family: Arial, sans-serif;
-        border: 1px solid #ccc;
-        padding: 5px;
-        display: inline-block;
-        font-size: 10px;
-        font-weight: bold;
-        text-align: center;
+  #municipio-viagem,
+#municipio {
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}align: center;
     }
 
     #municipio {
