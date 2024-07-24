@@ -171,7 +171,7 @@ function adicionarAtividade() {
 
     // Conteúdo das colunas
     cellHorario.innerHTML = '<input type="text" name="horario" placeholder="Ex: 08:00">';
-    cellAtividade.innerHTML = '<input type="text" name="atividade" placeholder="Descrição da atividade">';
+    cellAtividade.innerHTML = '<textarea id="atividades" placeholder="Informe as atividades"></textarea>';
     cellAcoes.innerHTML = '<button class="remove-btn">Remover</button>';
 
     // Adicionar evento de clique para remover linha
