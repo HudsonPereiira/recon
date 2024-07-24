@@ -631,7 +631,7 @@ downloadPdf.addEventListener("click", (evt) => {
     /* Estilos do cabeçalho */
     header {
         background-color: #002c7d;
-        color: #ffffff;
+        color: #060000;
         padding: 20px 0;
         text-align: center;
         width: 100%;
