@@ -35,7 +35,7 @@
 
             <!-- Tabela de contatos -->
             <content>
-                <p><strong>CONTATOS TELEFÔNICOS:</strong></p>
+                <p><strong>CONTATOS TELEFÔNICOS</strong></p>
                 <table id="contatos-table">
                     <thead>
                         <tr>
@@ -54,9 +54,9 @@
             </content><br>
 
             <!-- Tabela de Militares -->
-            <content>
+           <br><br><content>
                 <strong>
-                    <p>CONTATOS DA ORGANIZAÇÃO POLICIAL MILITAR:</p>
+                    <p>CONTATOS DA ORGANIZAÇÃO POLICIAL MILITAR</p>
                 </strong>
                 <table id="militares-table">
                     <thead>
@@ -77,9 +77,9 @@
             </content><br>
 
             <!-- Tabela com a programação da agenda -->
-            <content>
+            <br><br><content>
                 <strong>
-                    <p>PROGRAMAÇÃO:</p>
+                    <p>PROGRAMAÇÃO</p>
                 </strong>
                 <table id="atividades-table">
                     <thead>
@@ -92,12 +92,12 @@
                     <tbody>
                         <!-- Linha inicial será adicionada dinamicamente -->
                     </tbody>
-                </table><br>
+                </table>
                 <button class="add-btn" id="add-atividade">Adicionar Atividade</button>
             </content><br>
 
             <!-- Dados da Comitiva -->
-            <content>
+            <br><br><content>
                 <strong>
                     <p>COMITIVA</p>
                 </strong>
@@ -143,12 +143,12 @@
             </content><br>
 
             <!-- DADOS DA SEGURANÇA -->
-            <content>
+            <br><br><content>
                 <strong>
-                    <p>DADOS DA SEGURANÇA:</p>
+                    <p>DADOS DA SEGURANÇA</p>
                 </strong>
                 <strong>
-                    <p>DISTÂNCIAS:</p>
+                    <p>DISTÂNCIAS</p>
                 </strong>
                 <table id="deslocamentos-table">
                     <thead>
@@ -168,7 +168,7 @@
             </content><br>
 
             <!-- DADOS DO LOCAL DO EVENTO -->
-            <content>
+            <br><br><content>
                 <strong>
                     <p>DADOS DO LOCAL DO EVENTO</p>
                 </strong>
@@ -222,9 +222,9 @@
 
 
             <!--DADOS DO CERIMONIAL-->
-            <content>
+            <br><content>
                 <strong>
-                    <p>DADOS DO CERIMONIAL:</p>
+                    <p>DADOS DO CERIMONIAL</p>
                 </strong>
                 <table id="cerimonial-table">
                     <thead>
@@ -251,9 +251,9 @@
             </content>
 
             <!--DADOS DO DESLOCAMENTO AÉREO-->
-            <content>
+            <br><content>
                 <strong>
-                    <p>DADOS DO DESLOCAMENTO AÉREO:</p>
+                    <p>DADOS DO DESLOCAMENTO AÉREO</p>
                 </strong>
                 <table id="voo-table">
                     <thead>
@@ -275,12 +275,12 @@
             </content><br>
 
             <!-- DADO DO LOCAL DO POUSO-->
-            <div id="pouso-sections-container">
+            <br><br><div id="pouso-sections-container">
                 <div class="pouso-section" data-section-number="11">
                     <!-- TABELA DOS DADOS DO LOCAL DO POUSO -->
                     <content>
                         <strong>
-                            <p>DADOS DO LOCAL DO POUSO 1 <td><input type="text" placeholder="Informe o local do pouso"
+                            <p>DADOS DO LOCAL DO POUSO I <td><input type="text" placeholder="Informe o local do pouso"
                                         id="entrada-texto">
                                 </td>
                             </p>
@@ -288,8 +288,7 @@
                         <table id="pouso">
                             <thead>
                                 <tr>
-                                    <th>Informações</th>
-                                    <th>Entradas</th>
+                                    <th colspan="2">Informações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -330,9 +329,9 @@
 
                     <!-- DADOS DO LOCAL DE POUSO -->
 
-                    <content>
+                    <br><br><content>
                         <strong>
-                            <p>COORDENADAS DO LOCAL DE POUSO 1 <td><input type="text" id="entrada-texto"
+                            <p>COORDENADAS DO LOCAL DE POUSO I <td><input type="text" id="entrada-texto"
                                         placeholder="Informe o local do pouso"></td>
                             </p>
                         </strong>
@@ -354,9 +353,9 @@
                     </content>
 
                     <!-- FOTOGRAFIAS DO LOCAL DE POUSO -->
-                    <content>
+                    <br><br><content>
                         <strong>
-                            <p>FOTOGRAFIAS DO LOCAL DO POUSO 1</p>
+                            <p>FOTOGRAFIAS DO LOCAL DO POUSO I</p>
                         </strong>
                         <form id="uploadForm" enctype="multipart/form-data">
                             <input type="file" id="fileInput1" name="fileInput" accept="image/*">
@@ -387,23 +386,24 @@
             <button id="addLocalBtn" class="add-btn">Adicionar local de pouso</button><br>
 
             <!--Ára de segurança do helicóptero imagem-->
-            <content>
+            <br><br><content>
                 <br><strong>
                     <p>ÁREA DE SEGURANÇA DO HELICÓPTERO</p>
                 </strong>
-                <img src="assets/images/area_segura_pouso.png" alt="Área de segurança do helicópetero"
-                    class="area_segura"><br>
+                <div class="contain">
+                    <img src="assets/images/area_segura_pouso.png"
+                    alt="Área de segurança do helicópetero" class="area_segura"><br>
+                </div>
             </content>
 
-            <content>
-                <br><br>
+            <br><br><content>
                 <h4>INFORMAÇÕES DA POLÍTICA DO MUNICÍPIO DE <input type="text" id="municipio"></h4><br>
                 <input type="text" id="entrada-texto"
                     placeholder="Ex: O Prefeito Fulano de Tal (Partido) foi eleito no último pleito, com 55,97% dos votos, total de 9.668 dos votos válidos"><br>
             </content>
 
             <!-- TABELA COM AS EUIPES DE SERVIÇO-->
-            <content>
+            <br><br><content>
                 <br><br> <strong>
                     <p>EQUIPES DE SERVIÇO</p>
                 </strong>
@@ -492,14 +492,14 @@
 
             <!--Input para observações-->
             <content>
-                <h4>Observações<textarea id="observacoes" placeholder="Informe as observações"></textarea></h4><br>
+                <h4>OBSERVAÇÕES<textarea id="observacoes" placeholder="Informe as observações"></textarea></h4><br>
                 <strong>
             </content>
             <content>
                 <p>DEVOLUÇÃO DOS VEÍCULOS: CONSULTAR O NÚCLEO DE OPERAÇÕES ESPECIAIS - NOE.</p>
                 </strong><BR>
                 <strong>
-                    <p>ELABORAÇÃO: <input type="text" placeholder="Responsável pelo Recon" style= "width: 40%">
+                    <p>ELABORAÇÃO: <input type="text" placeholder="Responsável pelo Recon" style="width: 40%">
                     </p>
                 </strong><br>
             </content>

@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cellNum.textContent = table.rows.length; // Número de linhas
         cellPosto.innerHTML = '<input type="text" name="posto[]" placeholder="Ex: Capitão">';
         cellNome.innerHTML = '<input type="text" name="nome[]" placeholder="Ex: João da Silva">';
-        cellFuncao.innerHTML = '<input type="text" name="funcao[]" placeholder="Ex: Comandante da 3ªCIA">';
+        cellFuncao.innerHTML = '<textarea placeholder="Ex: Comandante da 3ªCIA"></textarea>';
         cellTelefone.innerHTML = '<input type="text" name="telefone[]" placeholder="Ex: (99) 9999-9999">';
         cellRemover.innerHTML = '<button class="remove-btn">Remover</button>'; // Botão de remover
 
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cellNum.textContent = table.rows.length; // Número de linhas
         cellPosto.innerHTML = '<input type="text" name="posto[]" placeholder="Ex: Capitão">';
         cellNome.innerHTML = '<input type="text" name="nome[]" placeholder="Ex: João da Silva">';
-        cellFuncao.innerHTML = '<input type="text" name="funcao[]" placeholder="Ex: Comandante da 3ªCIA">';
+        cellFuncao.innerHTML = '<textarea placeholder="Ex: Comandante da 3ªCIA"></textarea>';
         cellTelefone.innerHTML = '<input type="text" name="telefone[]" placeholder="Ex: (99) 9999-9999">';
         cellRemover.innerHTML = '<button class="remove-btn">Remover</button>'; // Botão de remover
 
@@ -394,6 +394,19 @@ function previewImage(file, previewId) {
 
 
 
+// Função para converter número arábico para número romano
+function toRoman(num) {
+    if (typeof num !== 'number') return false;
+    var digits = String(+num).split(''),
+        key = ['','C','CC','CCC','CD','D','DC','DCC','DCCC','CM',
+               '','X','XX','XXX','XL','L','LX','LXX','LXXX','XC',
+               '','I','II','III','IV','V','VI','VII','VIII','IX'],
+        roman = '',
+        i = 3;
+    while (i--)
+        roman = (key[+digits.pop() + (i * 10)] || '') + roman;
+    return Array(+digits.join('') + 1).join('M') + roman;
+}
 
 
 //JS para adicionar dinamicamente, novos locais de pouso
@@ -411,18 +424,17 @@ document.addEventListener("DOMContentLoaded", function () {
     function addPousoSection(number) {
         const pousoSection = document.createElement('div');
         pousoSection.className = 'pouso-section';
-        pousoSection.setAttribute('data-section-number', number);
+        pousoSection.setAttribute('data-section-number', toRoman(number));
 
         pousoSection.innerHTML = `
             <content>
                 <strong>
-                    <p>DADOS DO LOCAL DO POUSO ${number}: <input type="text" placeholder="Informe o local do pouso"></p>
+                    <p>DADOS DO LOCAL DO POUSO ${toRoman(number)} <input type="text" placeholder="Informe o local do pouso"></p>
                 </strong>
                 <table>
                     <thead>
                         <tr>
-                            <th>Informações</th>
-                            <th>Entradas</th>
+                            <th colspan="2">Informações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -459,7 +471,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </content>
             <strong>
                 <strong>
-                    <p>COORDENADAS DO LOCAL DE POUSO ${number}: <input type="text" placeholder="Informe o local do pouso"></p>
+                    <p>COORDENADAS DO LOCAL DE POUSO ${toRoman(number)} <input type="text" placeholder="Informe o local do pouso"></p>
                 </strong>
                 <table border="1">
                             <tbody>
@@ -479,17 +491,17 @@ document.addEventListener("DOMContentLoaded", function () {
             </content>
             <content>
                 <strong>
-                    <p>FOTOGRAFIAS DO LOCAL DO POUSO ${number}:</p>
+                    <p>FOTOGRAFIAS DO LOCAL DO POUSO ${toRoman(number)} </p>
                 </strong>
-            <form id="uploadForm${number}" enctype="multipart/form-data">
-            <input type="file" id="fileInput${number}_1" name="fileInput" accept="image/*">
-            <input type="file" id="fileInput${number}_2" name="fileInput" accept="image/*">
-            <input type="file" id="fileInput${number}_3" name="fileInput" accept="image/*">
+            <form id="uploadForm${toRoman(number)}" enctype="multipart/form-data">
+            <input type="file" id="fileInput${toRoman(number)}_1" name="fileInput" accept="image/*">
+            <input type="file" id="fileInput${toRoman(number)}_2" name="fileInput" accept="image/*">
+            <input type="file" id="fileInput${toRoman(number)}_3" name="fileInput" accept="image/*">
             <button type="button" class="add-btn">Enviar Fotos</button>
             <div class="image-container">
-            <div class="image-preview" id="imagePreview${number}_1"></div>
-            <div class="image-preview" id="imagePreview${number}_2"></div>
-            <div class="image-preview" id="imagePreview${number}_3"></div>
+            <div class="image-preview" id="imagePreview${toRoman(number)}_1"></div>
+            <div class="image-preview" id="imagePreview${toRoman(number)}_2"></div>
+            <div class="image-preview" id="imagePreview${toRoman(number)}_3"></div>
             </div>
             </form>
         </content>
@@ -507,7 +519,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const fileInputs = pousoSection.querySelectorAll(`input[type="file"]`);
         fileInputs.forEach(fileInput => {
             fileInput.addEventListener('change', function () {
-                previewImages(fileInputs, number);
+                previewImages(fileInputs, toRoman(number));
             });
         });
 
@@ -606,8 +618,9 @@ downloadPdf.addEventListener("click", (evt) => {
     /* Estilos gerais */
     body {
         font-family: Arial, sans-serif;
-        margin: 0;
+        margin: 2cm 0;
         padding: 0;
+        box-sizing: border-box;
         color: #000;
         display: flex;
         flex-direction: column;
@@ -663,6 +676,7 @@ downloadPdf.addEventListener("click", (evt) => {
         border: 1px solid #002c7d;
         padding: 8px;
         text-align: center;
+        font-size: 12px;
     }
 
     th {
@@ -670,6 +684,7 @@ downloadPdf.addEventListener("click", (evt) => {
         color: #00050c;
         font-weight: bold;
         text-transform: uppercase;
+        font-size: 12px;
     }
 
     /* Estilos dos inputs e textareas */
@@ -677,6 +692,7 @@ downloadPdf.addEventListener("click", (evt) => {
         width: 91.5%;
         box-sizing: border-box;
         text-align: center;
+        font-size: 12px;
     }
 
     input[type="text"]::placeholder {
@@ -689,7 +705,7 @@ downloadPdf.addEventListener("click", (evt) => {
         border: none;
         cursor: pointer;
         border-radius: 5px;
-        font-size: 16px;
+        font-size: 14px;
         margin-right: 10px;
         text-align: center;
     }
@@ -719,12 +735,12 @@ downloadPdf.addEventListener("click", (evt) => {
     }
 
     /* Estilos específicos para inputs */
-    #municipio-viagem, #municipio, #link, #coordenada, #coordenada2 {
+    #municipio-viagem, #municipio,{
         font-family: Arial, sans-serif;
         border: 1px solid #ccc;
         padding: 5px;
         display: inline-block;
-        font-size: 16px;
+        font-size: 10px;
         font-weight: bold;
         text-align: center;
     }
@@ -740,19 +756,43 @@ downloadPdf.addEventListener("click", (evt) => {
     }
 
     #link {
-        width: 50%;
-        color: #0039a4;
-    }
+    width: 50%;
+    color: #0039a4;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
 
-    #coordenada {
-        width: 15%;
-        color: #f70019;
-    }
+#coordenada {
+    width: 15%;
+    color: #f70019;
+    width: 50%;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
 
-    #coordenada2 {
-        width: 100%;
-        color: #f70019;
-    }
+#coordenada2 {
+    width: 100%;
+    color: #f70019;
+    width: 50%;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    
+}
 
     /* Estilo das fotos carregadas */
     .image-container {
@@ -778,14 +818,27 @@ downloadPdf.addEventListener("click", (evt) => {
         object-fit: cover;
     }
 
-    /* Estilização da área de segurança da aeronave */
-    .area_segura {
-        max-width: 50%;
-        width: 50%;
-        height: auto;
-        justify-content: center; /* Centraliza horizontalmente */
-        align-items: center;
-    }
+/* Estilização da área de segurança da aeronave */
+.area_segura {
+    max-width: 50%;
+    width: 50%;
+    height: auto;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+}
+/* Estilo do container para centralizar a imagem */
+.contain {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    height: 20vh;           /* Altura da imagem*/
+}
+
+/* Estilo da imagem */
+.area_segura {
+    max-width: 100%;         /* Ajusta a largura máxima da imagem */
+    height: auto;            /* Mantém a proporção da imagem */
+}
+
 
     /* Responsividade */
     @media only screen and (max-width: 600px) {
@@ -804,7 +857,7 @@ downloadPdf.addEventListener("click", (evt) => {
         }
 
         table {
-            font-size: 12px;
+            font-size: 10px;
         }
 
         th, td {
@@ -832,19 +885,6 @@ downloadPdf.addEventListener("click", (evt) => {
     .coordinate-value {
         color: red;
     }
-                @page {
-                margin: 2cm;
-            }
-            body {
-                margin: 2cm;
-            }
-            .input-value {
-                color: blue;
-            }
-            .coordinate-value {
-                color: red;
-            }
-    
     </style>`;
 
     // Abrindo uma nova janela

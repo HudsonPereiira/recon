@@ -72,6 +72,7 @@ input[type="text"], textarea {
     width: 91.5%;
     box-sizing: border-box;
     text-align: center;
+    font-size: 12px;
 }
 
 input[type="text"]::placeholder {
@@ -84,7 +85,7 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
     margin-right: 10px;
     text-align: center;
 }
@@ -115,7 +116,7 @@ footer {
 
 /* Estilos específicos para inputs */
 
-#municipio-viagem, #municipio, #link, #coordenada, #coordenada2 {
+#municipio-viagem, #municipio,{
     font-family: Arial, sans-serif;
     border: 1px solid #ccc;
     padding: 5px;
@@ -138,16 +139,40 @@ footer {
 #link {
     width: 50%;
     color: #0039a4;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
 }
 
 #coordenada {
     width: 15%;
     color: #f70019;
+    width: 50%;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
 }
 
 #coordenada2 {
     width: 100%;
     color: #f70019;
+    width: 50%;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    
 }
 
 /* Estilo das fotos carregadas */
@@ -182,6 +207,19 @@ footer {
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center;
 }
+/* Estilo do container para centralizar a imagem */
+.contain {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    height: 35vh;           /* Altura da imagem*/
+}
+
+/* Estilo da imagem */
+.area_segura {
+    max-width: 100%;         /* Ajusta a largura máxima da imagem */
+    height: auto;            /* Mantém a proporção da imagem */
+}
+
 
 
 
