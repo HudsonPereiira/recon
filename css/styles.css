@@ -179,11 +179,20 @@ footer {
 /* Estilo das fotos carregadas */
 .image-container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: center; /* Centraliza as imagens dentro do contêiner */
+    flex-wrap: wrap; /* Permite que as imagens se movam para a próxima linha se necessário */
+    gap: 10px; /* Espaçamento entre as imagens */
     margin-top: 20px;
     width: calc(100% - 40px);
     box-sizing: border-box;
+    
+}
+
+.image-container img {
+    max-width: 6cm; /* Largura máxima de cada imagem */
+    max-height: 5cm; /* Altura máxima de cada imagem */
+    width: auto;
+    height: auto;
 }
 
 .image-preview {
@@ -219,6 +228,24 @@ footer {
 body {
     padding: 2%
     }
+    
+    
+/* Evita quebra de página dentro destes elementos */
+table, tr, td, th, h4, p .no-page-break {
+    page-break-inside: avoid;
+    -webkit-region-break-inside: avoid;
+    -moz-region-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Adiciona a classe no-page-break aos elementos que você não quer quebrar entre páginas */
+.no-page-break {
+    page-break-inside: avoid;
+    -webkit-region-break-inside: avoid;
+    -moz-region-break-inside: avoid;
+    break-inside: avoid;
+}
+
 
 
 

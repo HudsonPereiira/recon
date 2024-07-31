@@ -483,7 +483,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 </tr>
                                 <tr>
                                     <td colspan="4">          
-                                        <input type="url" id="link" name="link" placeholder="Link da coordnada">
+                                        <input type="url" id="link" name="link" placeholder="Link da coordenada">
                                     </td>
                                 </tr>
                             </tbody>
@@ -612,289 +612,6 @@ const downloadPdf = document.getElementById("downloadpdf");
 downloadPdf.addEventListener("click", (evt) => {
     const content = document.getElementById("content").cloneNode(true); // Clona o elemento #content com todos os seus descendentes
 
-    // Estilos CSS para o documento PDF
-    const estilo = 
-        `<style>
-    /* Estilos gerais */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 2cm 0;
-        padding: 0;
-        box-sizing: border-box;
-        color: #000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #f0f0f0;
-    }
-
-    /* Estilos do cabeçalho */
-    header {
-        background-color: #002c7d;
-        color: #060000;
-        padding: 20px 0;
-        text-align: center;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .header-content {
-        max-width: 800px;
-        width: 100%;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .brasao {
-        width: 80px;
-        height: auto;
-        margin-right: 10px;
-    }
-
-    .header-text {
-        text-align: center;
-    }
-
-    .header-text p {
-        font-size: 16px;
-        margin: 5px 0;
-        text-transform: uppercase;
-    }
-
-    /* Estilos da tabela */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-        border: 2px solid #002c7d;
-    }
-
-    th, td {
-        border: 1px solid #002c7d;
-        padding: 8px;
-        text-align: center;
-        font-size: 12px;
-    }
-
-    th {
-        background-color: #f2f2f2;
-        color: #00050c;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 12px;
-    }
-
-    /* Estilos dos inputs e textareas */
-    input[type="text"], textarea {
-        width: 91.5%;
-        box-sizing: border-box;
-        text-align: center;
-        font-size: 12px;
-    }
-
-    input[type="text"]::placeholder {
-        text-align: center;
-    }
-
-    /* Estilos dos botões */
-    button {
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        font-size: 14px;
-        margin-right: 10px;
-        text-align: center;
-    }
-
-    .add-btn {
-        background-color: #0578f3;
-        color: #fff;
-    }
-
-    .remove-btn {
-        background-color: #dc3545;
-        color: #fff;
-    }
-
-    .button-select-file {
-        background-color: #fff;
-        color: #000;
-    }
-
-    .button-send-photo {
-        background-color: #28a745;
-        color: #fff;
-    }
-
-    footer {
-        text-align: center;
-    }
-
-    /* Estilos específicos para inputs */
-  #municipio-viagem,
-#municipio {
-    font-family: Arial, sans-serif;
-    border: 1px solid #ccc;
-    padding: 5px;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-}align: center;
-    }
-
-    #municipio {
-        width: 20%;
-        color: #00040a;
-    }
-
-    #municipio-viagem {
-        width: 100%;
-        color: #010409;
-    }
-
-    #link {
-    width: 50%;
-    color: #0039a4;
-    font-family: Arial, sans-serif;
-    border: 1px solid #ccc;
-    padding: 5px;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: bold;
-    text-align: center;
-}
-
-#coordenada {
-    width: 15%;
-    color: #f70019;
-    width: 50%;
-    font-family: Arial, sans-serif;
-    border: 1px solid #ccc;
-    padding: 5px;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: bold;
-    text-align: center;
-}
-
-#coordenada2 {
-    width: 100%;
-    color: #f70019;
-    width: 50%;
-    font-family: Arial, sans-serif;
-    border: 1px solid #ccc;
-    padding: 5px;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: bold;
-    text-align: center;
-    
-}
-
-    /* Estilo das fotos carregadas */
-    .image-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 20px;
-        width: calc(100% - 40px);
-        box-sizing: border-box;
-    }
-
-    .image-preview {
-        max-width: 5cm;
-        max-height: 3cm;
-        border: 2px solid #ffffff;
-        overflow: hidden;
-        margin-bottom: 10px;
-    }
-
-    .image-preview img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-/* Estilização da área de segurança da aeronave */
-.area_segura {
-    max-width: 50%;
-    width: 50%;
-    height: auto;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;
-}
-/* Estilo do container para centralizar a imagem */
-.contain {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    height: 20vh;           /* Altura da imagem*/
-}
-
-/* Estilo da imagem */
-.area_segura {
-    max-width: 100%;         /* Ajusta a largura máxima da imagem */
-    height: auto;            /* Mantém a proporção da imagem */
-}
-
-
-    /* Responsividade */
-    @media only screen and (max-width: 600px) {
-        .header-content {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .brasao {
-            margin-bottom: 10px;
-        }
-
-        .header-text p {
-            font-size: 14px;
-        }
-
-        table {
-            font-size: 10px;
-        }
-
-        th, td {
-            padding: 5px;
-        }
-
-        .image-preview {
-            width: 100%;
-            height: auto;
-        }
-
-        input[type="text"], select {
-            width: 100%;
-        }
-
-        .button-send-photo, .button-select-file {
-            margin-bottom: 10px;
-        }
-    }
-
-    /* Estilo dos spans que substituem inputs */
-    .input-value {
-        color: blue;
-    }
-    .coordinate-value {
-        color: red;
-    }
-    </style>`;
-
-    // Abrindo uma nova janela
-    const win = window.open('', '', 'height=700, width=700');
-    win.document.write('<html><head><title>Recon</title>');
-    win.document.write(estilo); // Inclui os estilos CSS no cabeçalho do documento
-    win.document.write('</head><body>');
-
     // Atualizando os valores dos inputs e textareas nas tabelas do conteúdo clonado
     const tables = content.getElementsByTagName('table');
     for (let table of tables) {
@@ -904,17 +621,19 @@ downloadPdf.addEventListener("click", (evt) => {
             for (let cell of cells) {
                 const inputs = cell.getElementsByTagName('input');
                 for (let input of inputs) {
-                    const span = document.createElement('span');
-                    span.textContent = input.value;
-
-                    if (input.id === 'link') {
-                        span.classList.add('input-value'); // Adiciona a classe para azul
-                    } else if (input.id === 'coordenada' || input.id === 'coordenada2') {
-                        span.classList.add('coordinate-value'); // Adiciona a classe para vermelho
+                    if (input.id === 'link' && input.value) {
+                        const a = document.createElement('a');
+                        a.href = input.value.startsWith('http') ? input.value : `https://${input.value}`;
+                        a.textContent = input.value;
+                        a.target = '_blank';
+                        cell.replaceChild(a, input); // Substitui o input pelo link
+                    } else {
+                        const span = document.createElement('span');
+                        span.textContent = input.value;
+                        cell.replaceChild(span, input); // Substitui o input pelo span contendo o valor do input
                     }
-
-                    cell.replaceChild(span, input); // Substitui o input pelo span contendo o valor do input
                 }
+
                 const textareas = cell.getElementsByTagName('textarea');
                 for (let textarea of textareas) {
                     const span = document.createElement('span');
@@ -925,12 +644,20 @@ downloadPdf.addEventListener("click", (evt) => {
         }
     }
 
-    // Adicionando o conteúdo clonado ao documento da nova janela
-    win.document.body.appendChild(content);
+    // Usando html2pdf.js para gerar o PDF
+    const opt = {
+        margin:       0.3,
+        filename:     'Recon.pdf',
+        image:        { type: 'jpeg', quality: 1.00 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' },
+        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+    };
 
-    win.document.write('</body></html>');
-    win.print();
+    html2pdf().from(content).set(opt).save();
 });
+
+
 
 
 
