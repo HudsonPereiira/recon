@@ -8,6 +8,19 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #f0f0f0;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+/* Container principal com largura máxima */
+.main-container {
+    width: 210mm; /* Largura de uma folha A4 em mm */
+    max-width: 100%; /* Garante que não exceda a largura da tela */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+    background-color: #fff; /* Fundo branco para o conteúdo */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    position: relative;
 }
 
 /* Estilos do cabeçalho */
@@ -69,10 +82,17 @@ th {
 
 /* Estilos dos inputs e textareas */
 input[type="text"], textarea {
-    width: 91.5%;
+    width: 100%; /* Ajusta a largura para ocupar o máximo disponível */
+    max-width: 100%; /* Garante que a largura não exceda o contêiner */
     box-sizing: border-box;
     text-align: center;
     font-size: 12px;
+}
+
+textarea {
+    resize: vertical; /* Permite redimensionamento apenas vertical */
+    min-height: 50px; /* Define uma altura mínima */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se necessário */
 }
 
 input[type="text"]::placeholder {
@@ -126,7 +146,6 @@ footer {
     text-align: center;
 }
 
-
 #municipio {
     width: 20%;
     color: #00040a;
@@ -152,7 +171,6 @@ footer {
 #coordenada {
     width: 15%;
     color: #f70019;
-    width: 50%;
     font-family: Arial, sans-serif;
     border: 1px solid #ccc;
     padding: 5px;
@@ -165,7 +183,6 @@ footer {
 #coordenada2 {
     width: 100%;
     color: #f70019;
-    width: 50%;
     font-family: Arial, sans-serif;
     border: 1px solid #ccc;
     padding: 5px;
@@ -173,7 +190,6 @@ footer {
     font-size: 12px;
     font-weight: bold;
     text-align: center;
-    
 }
 
 /* Estilo das fotos carregadas */
@@ -183,9 +199,8 @@ footer {
     flex-wrap: wrap; /* Permite que as imagens se movam para a próxima linha se necessário */
     gap: 10px; /* Espaçamento entre as imagens */
     margin-top: 20px;
-    width: calc(100% - 40px);
+    width: calc(100% - 40px); /* Ajusta para a largura do contêiner com padding */
     box-sizing: border-box;
-    
 }
 
 .image-container img {
@@ -209,7 +224,7 @@ footer {
     object-fit: cover;
 }
 
-/* Estilização da área de segurança da aeronave */
+/* Estilo da área de segurança da aeronave */
 .area_segura {
     max-width: 50%;
     width: 50%;
@@ -217,19 +232,24 @@ footer {
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center;
 }
+
 /* Estilo do container para centralizar a imagem */
 .contain {
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
-    height: 35vh;           /* Altura da imagem*/
+    height: 35vh; /* Altura da imagem */
 }
 
+/* Estilo da página com largura e altura máximas de A4 */
+.page {
+    width: 210mm; /* Largura máxima de uma folha A4 em mm */
+    height: auto;
+    margin: 0 auto;
+    background-color: #fff;
+    box-sizing: border-box;
+    position: relative;
+}
 
-body {
-    padding: 2%
-    }
-    
-    
 /* Evita quebra de página dentro destes elementos */
 table, tr, td, th, h4, p .no-page-break {
     page-break-inside: avoid;
@@ -246,13 +266,9 @@ table, tr, td, th, h4, p .no-page-break {
     break-inside: avoid;
 }
 
-
-
-
 /* Responsividade */
 /* Estilos responsivos para smartphones */
 @media (max-width: 768px) {
-
     /* Estilos do cabeçalho */
     header {
         padding: 15px 0;
@@ -322,49 +338,6 @@ table, tr, td, th, h4, p .no-page-break {
 
     /* Estilo do container para centralizar a imagem */
     .contain {
-        height: auto;
-    }
-
-    /* Margem superior e inferior do body */
-    body {
-        padding: 3%;
-    }
-}
-
-@media (max-width: 480px) {
-
-    /* Ajustes adicionais para telas muito pequenas */
-    .header-text p {
-        font-size: 12px;
-    }
-
-    input[type="text"], textarea {
-        font-size: 12px;
-    }
-
-    button {
-        padding: 6px 12px;
-        font-size: 10px;
-    }
-
-    .add-btn, .remove-btn, .button-select-file, .button-send-photo {
-        padding: 6px;
-        font-size: 10px;
-    }
-
-    #municipio, #municipio-viagem, #link, #coordenada, #coordenada2 {
-        width: 95%;
-        font-size: 12px;
-    }
-
-    /* Estilo das fotos carregadas */
-    .image-preview {
-        max-width: 4cm;
-        max-height: 3cm;
-    }
-
-    /* Ajusta o espaçamento para smartphones muito pequenos */
-    body {
-        padding: 2%;
+        height: 20vh;
     }
 }
